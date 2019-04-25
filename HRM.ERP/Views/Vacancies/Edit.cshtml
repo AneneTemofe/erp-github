@@ -1,0 +1,136 @@
+﻿@model HRM.ERP.Models.HRM.Vacancy
+@{
+    ViewData["Title"] = "Edit Vacancy";
+    Layout = "_LayoutAdmin";
+}
+
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+    <div class="loader">
+        <div class="loader__figure"></div>
+        <p class="loader__label">Elite admin</p>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
+    <!-- ============================================================== -->
+    <!-- Topbar header - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    @await Html.PartialAsync("_LayoutAdminHeader")
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    @await Html.PartialAsync("_LayoutAdminAside")
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Over Visitor, Our income , slaes different and  sales prediction -->
+            <!-- ============================================================== -->
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Create New Vacancy</h4>
+                        <h6 class="card-subtitle">fill in correct information</h6>
+                        <form class="form-horizontal p-t-20" asp-action="Edit" asp-controller="Vacancies" method="post">
+
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-3 control-label">Job Title*</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <select asp-for="JobTitleId" class="form-control" asp-items="ViewBag.JobTitleId"></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                           
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-3 control-label">Hiring Manager*</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <input type="text" class="form-control" asp-for="HiringManager" placeholder="Hiring Manager" required>
+                                        <span asp-validation-for="HiringManager" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-3 control-label">Number Of Positions*</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <input type="text" class="form-control" asp-for="NoOfPositions" placeholder="Number Of Positions" required>
+                                        <span asp-validation-for="NoOfPositions" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-3 control-label">Description*</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <textarea rows="4" cols="30" class="form-control" asp-for="Description" placeholder="Description"></textarea>
+                                        <span asp-validation-for="Description" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                           
+
+
+
+                            <hr />
+                            <div class="form-group row m-b-0">
+                                <div class="offset-sm-3 col-sm-9">
+                                    <button type="submit" class="btn btn-success waves-effect waves-light">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Right sidebar -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->

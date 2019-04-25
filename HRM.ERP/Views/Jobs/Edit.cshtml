@@ -1,0 +1,222 @@
+﻿@model HRM.ERP.Models.HRM.Job
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+    <div class="loader">
+        <div class="loader__figure"></div>
+        <p class="loader__label">Elite admin</p>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
+    <!-- ============================================================== -->
+    <!-- Topbar header - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    @await Html.PartialAsync("_LayoutAdminHeader")
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    @await Html.PartialAsync("_LayoutAdminAside")
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Over Visitor, Our income , slaes different and  sales prediction -->
+            <!-- ============================================================== -->
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Edit Job</h4>
+                        <h6 class="card-subtitle">fill in correct information</h6>
+
+                        <form asp-action="Edit">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                            @*<div class="form-group">
+                                    <label asp-for="JobTitleId" class="control-label"></label>
+                                    <select asp-for="JobTitleId" class="form-control" asp-items="ViewBag.JobTitleId"></select>
+                                </div>*@
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-3 control-label">Contract Type ID*</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <select asp-for="ContractTypeId" class="form-control" asp-items="ViewBag.ContractTypeId"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-3 control-label">Organisation*</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <input asp-for="OrganisationId" class="form-control" />
+                                        <span asp-validation-for="OrganisationId" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-3 control-label">Job Description*</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <textarea asp-for="JobDescription" class="form-control" cols="3"></textarea>
+                                        <span asp-validation-for="JobDescription" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @*<div class="form-group">
+                                    <label asp-for="DateCreated" class="control-label"></label>
+                                    <input asp-for="DateCreated" class="form-control" />
+                                    <span asp-validation-for="DateCreated" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DateUpdated" class="control-label"></label>
+                                    <input asp-for="DateUpdated" class="form-control" />
+                                    <span asp-validation-for="DateUpdated" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DateModified" class="control-label"></label>
+                                    <input asp-for="DateModified" class="form-control" />
+                                    <span asp-validation-for="DateModified" class="text-danger"></span>
+                                </div>*@
+
+                            <hr />
+                            <div class="form-group row m-b-0">
+                                <div class="offset-sm-3 col-sm-9">
+                                    <button type="submit" class="btn btn-success waves-effect waves-light">Edit Job</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Page wrapper  -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- footer -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- End footer -->
+<!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="JobTitleId" class="control-label"></label>
+                <select asp-for="JobTitleId" class="form-control" asp-items="ViewBag.JobTitleId"></select>
+                <span asp-validation-for="JobTitleId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContractTypeId" class="control-label"></label>
+                <select asp-for="ContractTypeId" class="form-control" asp-items="ViewBag.ContractTypeId"></select>
+                <span asp-validation-for="ContractTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrganisationId" class="control-label"></label>
+                <input asp-for="OrganisationId" class="form-control" />
+                <span asp-validation-for="OrganisationId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContractStartDate" class="control-label"></label>
+                <input asp-for="ContractStartDate" class="form-control" />
+                <span asp-validation-for="ContractStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContractEndDate" class="control-label"></label>
+                <input asp-for="ContractEndDate" class="form-control" />
+                <span asp-validation-for="ContractEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobDescription" class="control-label"></label>
+                <input asp-for="JobDescription" class="form-control" />
+                <span asp-validation-for="JobDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateCreated" class="control-label"></label>
+                <input asp-for="DateCreated" class="form-control" />
+                <span asp-validation-for="DateCreated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateUpdated" class="control-label"></label>
+                <input asp-for="DateUpdated" class="form-control" />
+                <span asp-validation-for="DateUpdated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateModified" class="control-label"></label>
+                <input asp-for="DateModified" class="form-control" />
+                <span asp-validation-for="DateModified" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="IsDeleted" /> @Html.DisplayNameFor(model => model.IsDeleted)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+

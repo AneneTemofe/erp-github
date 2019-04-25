@@ -1,0 +1,173 @@
+﻿@model IEnumerable<HRM.ERP.Models.Organisation>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutLandingPage.cshtml";
+}
+
+
+<div id="main-wrapper">
+
+
+  @await Html.PartialAsync("_LayoutLandingPageHeader")
+  <!-- ============================================================== -->
+  <!-- End Topbar header -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- Left Sidebar - style you can find in sidebar.scss  -->
+  <!-- ============================================================== -->
+  @await Html.PartialAsync("_LayoutLandingPageAside")
+
+
+  <div class="page-wrapper">
+
+    <div class="container-fluid">
+      <!-- ============================================================== -->
+      <!-- Bread crumb and right sidebar toggle -->
+      <!-- ============================================================== -->
+      <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+          <h4 class="text-themecolor">Organisation</h4>
+        </div>
+        <div class="col-md-7 align-self-center text-right">
+          <div class="d-flex justify-content-end align-items-center">
+            @*<ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active">Users</li>
+            </ol>*@
+            <a asp-action="Create" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Create New</a>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Bread crumb and right sidebar toggle -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Start Page Content -->
+      <!-- ============================================================== -->
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Organisation </h4>
+              <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
+              <div class="table-responsive m-t-40">
+                <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+
+                  <thead>
+                    <tr>
+                      <th>
+                        Organisation Name
+                      </th>
+                      <th>
+                        Number Of Employees
+                      </th>
+                      <th>
+                        Phone Number
+                      </th>
+                      <th>
+                        E-mail
+                      </th>
+                      <th>
+                        Address
+                      </th>
+                      <th>
+                        City
+                      </th>
+                      <th>
+                        Zip Code
+                      </th>
+                      <th>
+                        Tax ID
+                      </th>
+                      <th>
+                        Registration Number
+                      </th>
+                      <th>
+                        State
+                      </th>
+                      <th>
+                        Country
+                      </th>
+
+                      <th>
+                        Options
+                      </th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach (var item in Model)
+                    {
+                      <tr>
+                        <td>
+                          @Html.DisplayFor(modelItem => item.OrganisationName)
+                        </td>
+                        <td>
+                          @Html.DisplayFor(modelItem => item.NoOfEmployees)
+                        </td>
+                        <td>
+                          @Html.DisplayFor(modelItem => item.PhoneNumber)
+                        </td>
+                        <td>
+                          @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                          @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                          @Html.DisplayFor(modelItem => item.City)
+                        </td>
+                        <td>
+                          @Html.DisplayFor(modelItem => item.ZipCode)
+                        </td>
+                        <td>
+                          @Html.DisplayFor(modelItem => item.TaxId)
+                        </td>
+                        <td>
+                          @Html.DisplayFor(modelItem => item.RegistrationNo)
+                        </td>
+                        <td>
+                          @Html.DisplayFor(modelItem => item.State)
+                        </td>
+                        <td>
+                          @Html.DisplayFor(modelItem => item.Country)
+                        </td>
+
+                        <td align="center">
+                          <a class="btn btn-info" asp-action="Edit" asp-controller="Branches" asp-route-id="@item.Id" style="color:white;">Edit</a>
+                          <a class="btn btn-danger" asp-action="Delete" asp-controller="Branches" asp-route-id="@item.Id" style="color:white;">Delete</a>
+                        </td>
+
+                      </tr>
+                    }
+                  </tbody>
+
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================== -->
+      <!-- End PAge Content -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Right sidebar -->
+      <!-- ============================================================== -->
+      <!-- .right-sidebar -->
+      <!-- ============================================================== -->
+      <!-- End Page wrapper  -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- footer -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- End footer -->
+      <!-- ============================================================== -->
+
+    </div>
+
+  </div>
+
+  </div>

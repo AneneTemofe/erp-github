@@ -1,0 +1,354 @@
+﻿@model IEnumerable<HRM.ERP.Models.ACC.Estimate>
+
+@{
+  ViewData["Title"] = "Index";
+  Layout = "~/Views/Shared/_LayoutAccountAdmin.cshtml";
+}
+
+
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+  <div class="loader">
+    <div class="loader__figure"></div>
+    <p class="loader__label">Elite admin</p>
+  </div>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+
+<div id="main-wrapper">
+  <!-- ============================================================== -->
+  <!-- Topbar header - style you can find in pages.scss -->
+  <!-- Topbar header - style you can find in pages.scss -->
+  <!-- ============================================================== -->
+  @await Html.PartialAsync("_LayoutAdminHeader")
+  <!-- ============================================================== -->
+  <!-- End Topbar header -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- Left Sidebar - style you can find in sidebar.scss  -->
+  <!-- ============================================================== -->
+  @await Html.PartialAsync("_LayoutAccountAside")
+  <!-- ============================================================== -->
+  <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- Page wrapper  -->
+  <!-- ============================================================== -->
+  <div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+      <!-- ============================================================== -->
+      <!-- Bread crumb and right sidebar toggle -->
+      <!-- ============================================================== -->
+      <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+          <h4 class="text-themecolor">Invoices</h4>
+        </div>
+        <div class="col-md-7 align-self-center text-right">
+          <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+              <li class="breadcrumb-item active">Invoice</li>
+            </ol>
+            <a asp-action="AddInvoice" asp-controller="Invoices" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Create New</a>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Bread crumb and right sidebar toggle -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Start Page Content -->
+      <!-- ============================================================== -->
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Invoices</h4>
+              <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
+              <div class="table-responsive m-t-40">
+                <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th>
+                        Invoice ID
+                      </th>
+                      <th>
+                        Customer Name
+                      </th>
+                      <th>
+                        Date Created
+                      </th>
+                      <th>
+                        Amount
+                      </th>
+                      <th>
+                        Status
+                      </th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>
+                        Invoice ID
+                      </th>
+                      <th>
+                        Customer Name
+                      </th>
+                      <th>
+                        Date Created
+                      </th>
+                      <th>
+                        Amount
+                      </th>
+                      <th>
+                        Status
+                      </th>
+                      <th>Actions</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    @foreach (var item in Model)
+                    {
+                      <tr>
+                        @*<td></td>*@
+                        <td>
+                          @Html.DisplayFor(modelItem => item.EstimateNo)
+                        </td>
+                        <td>
+                          @Html.DisplayFor(modelItem => item.Customer.CustomerName)
+                        </td>
+                        <td>
+                          @Html.DisplayFor(modelItem => item.DateCreated)
+                        </td>
+                        <td>
+                          @Html.DisplayFor(modelItem => item.GrandTotal)
+                        </td>
+                        <td>
+                          @if (item.PaymentStatus == "PAID")
+                          {
+                            <span class="btn btn-sm btn-success">Paid</span>
+                          }
+                          else
+                          {
+                            <span class="btn btn-sm btn-danger">Not Paid</span>
+
+                          }
+                          @*@Html.DisplayFor(modelItem => item.Status)*@
+                        </td>
+                        <td>
+
+                          @if (item.PaymentStatus == "PAID")
+                          {
+                            <a asp-action="View" class="btn btn-sm btn-success" asp-route-id="@item.Id">View</a> <span>|</span>
+                            <a asp-action="SentToEmail" class="btn btn-sm btn-warning" asp-route-id="@item.Id">Send to Email</a>
+                          }
+                          else
+                          {
+                            <a asp-action="AddInvoice" class="btn btn-sm btn-info" asp-route-id="@item.Id">Edit </a> <span>|</span>
+                            <a asp-action="InvoicePaid" class="btn btn-sm btn-success model_img img-responsive" asp-route-id="@item.Id" account-id="@item.Id" selected-price="@item.GrandTotal" id="paidbtn" alt="default" data-toggle="modal"  data-target="#myModal">Paid</a> <span>|</span>
+                            <a asp-action="SentToEmail" class="btn btn-sm btn-warning" asp-route-id="@item.Id">Send to Email</a>
+
+                          }
+
+                        </td>
+                      </tr>
+                    }
+                  </tbody>
+                </table>
+                <!-- sample modal content -->
+                <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Upload Payment Evidence</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      </div>
+                      <div class="modal-body">
+                        <h6 class="card-subtitle">fill in correct information</h6>
+
+                        <form class="form-horizontal p-t-20" asp-action="UploadImage" asp-controller="Invoices" method="post" enctype="multipart/form-data">
+                          <div asp-validation-summary="All"></div>
+                          <input type="hidden" name="Id" id="Id" />
+
+                          <div class="form-group row">
+                            <label for="exampleInputuname3" class="col-sm-3 control-label">Title*</label>
+                            <div class="col-sm-9">
+                              <div class="input-group">
+                                <div class="input-group-prepend"></div>
+                                <input type="text" id="Title" name="Title" class="form-control" placeholder="Title" required>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="exampleInputuname3" class="col-sm-3 control-label">Upload Receipt*</label>
+                            <div class="col-sm-9">
+                              <div class="input-group">
+                                <div class="input-group-prepend"></div>
+                                <input type="file" class="form-control" id="UploadFile" name="UploadFile" required>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <label for="exampleInputuname3" class="col-sm-3 control-label">Amount*</label>
+                            <div class="col-sm-9">
+                              <div class="input-group">
+                                <div class="input-group-prepend"></div>
+                                <input type="number" class="form-control" id="Amount" name="Amount" placeholder="Enter the Amount" required>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="exampleInputuname3" class="col-sm-3 control-label">Description*</label>
+                            <div class="col-sm-9">
+                              <div class="input-group">
+                                <div class="input-group-prepend"></div>
+                                <textarea type="text" class="form-control" id="Description" name="Description" placeholder="Enter Description" required></textarea>
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div class="form-group row m-b-0">
+                            <div class="offset-sm-3 col-sm-9">
+                              <button type="submit" class="btn btn-success waves-effect waves-light">Upload Receipt</button>
+                            </div>
+                          </div>
+
+                        </form>
+
+
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                      <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                  </div>
+                  <!-- /.modal -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <div class="right-sidebar">
+          <div class="slimscrollright">
+            <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
+            <div class="r-panel-body">
+              <ul id="themecolors" class="m-t-20">
+                <li><b>With Light sidebar</b></li>
+                <li><a href="javascript:void(0)" data-skin="skin-default" class="default-theme">1</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-green" class="green-theme">2</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-red" class="red-theme">3</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-blue" class="blue-theme">4</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-purple" class="purple-theme">5</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-megna" class="megna-theme">6</a></li>
+                <li class="d-block m-t-30"><b>With Dark sidebar</b></li>
+                <li><a href="javascript:void(0)" data-skin="skin-default-dark" class="default-dark-theme working">7</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-green-dark" class="green-dark-theme">8</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-red-dark" class="red-dark-theme">9</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-blue-dark" class="blue-dark-theme">10</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-purple-dark" class="purple-dark-theme">11</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-megna-dark" class="megna-dark-theme ">12</a></li>
+              </ul>
+              <ul class="m-t-20 chatonline">
+                <li><b>Chat option</b></li>
+                <li>
+                  <a href="javascript:void(0)"><img src="../assets/images/users/1.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)"><img src="../assets/images/users/2.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)"><img src="../assets/images/users/3.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)"><img src="../assets/images/users/7.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)"><img src="../assets/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Container fluid  -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    @*<footer class="footer">
+          © 2019 HR-ERP DevOps
+      </footer>*@
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+  </div>
+
+  <script>
+    var delAccountId;
+
+    $(document).delegate('#paidbtn',
+      'click',
+      function (e) {
+        delAccountId = $(this).attr('account-id');
+        selectedPrice = $(this).attr('selected-price');
+        
+        $('input[name=Id]').val(delAccountId);
+        $('input[name=Amount]').val(selectedPrice);
+
+      });
+
+    $(document).delegate('#btn-yes',
+      'click',
+      function (e) {
+        var data = {
+          accountId: delAccountId
+        };
+        //$.ajax({
+        //  url: '/controller/action',
+        //  type: 'POST',
+        //  data: data,
+        //  success: function (returnvalue) {
+        //    //what you want on success
+        //  },
+        //  error: function (error) {
+        //    //what you want on error
+        //  }
+        //});
+      });
+
+  </script>
+

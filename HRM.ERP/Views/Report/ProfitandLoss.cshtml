@@ -1,0 +1,397 @@
+﻿@model HRM.ERP.Models.ACCViewModel.ProfitLossViewModel
+
+    @{
+        ViewData["Title"] = "Index";
+        Layout = "~/Views/Shared/_LayoutAccountAdmin.cshtml";
+    }
+
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Elite admin</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        @await Html.PartialAsync("_LayoutAdminHeader")
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        @await Html.PartialAsync("_LayoutAccountAside")
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+          <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row page-titles">
+              <div class="col-md-5 align-self-center">
+                <h4 class="text-themecolor">Profit and Loss</h4>
+              </div>
+              <div class="col-md-7 align-self-center text-right">
+                <div class="d-flex justify-content-end align-items-center">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                    <li class="breadcrumb-item active">Report</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="row">
+              <!-- the beginning of the form -->
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Profit and Loss</h4>
+                    <form class="needs-validation inline" novalidate>
+                      <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                          <div class="form-group row">
+                            <label for="exampleInputuname3" class="col-sm-3 control-label">Year*</label>
+                            <div class="col-sm-6">
+                              <div class="input-group">
+                                <div class="input-group-prepend"></div>
+                                <select id="year" name="year" class="form-control">
+                                  <option value="2019">2019</option>
+                                  <option value="2018">2018</option>
+                                  <option value="2017">2017</option>
+                                  <option value="2016">2016</option>
+                                  <option value="2015">2015</option>
+                                  <option value="2014">2014</option>
+                                  <option value="2013">2013</option>
+                                  <option value="2012">2012</option>
+                                  <option value="2011">2011</option>
+                                  <option value="2010">2010</option>
+                                  <option value="2009">2009</option>
+                                  <option value="2008">2008</option>
+                                  <option value="2007">2007</option>
+                                  <option value="2006">2006</option>
+                                  <option value="2005">2005</option>
+                                  <option value="2004">2004</option>
+                                  <option value="2003">2003</option>
+                                  <option value="2002">2002</option>
+                                  <option value="2001">2001</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="exampleInputuname3" class="col-sm-3 control-label">Quater*</label>
+                            <div class="col-sm-6">
+                              <div class="input-group">
+                                <div class="input-group-prepend"></div>
+                                <select id="quater" name="quater" class="form-control">
+                                  <option value="0"> Full  </option>
+                                  <option value="1">Q1</option>
+                                  <option value="2">Q2</option>
+                                  <option value="3">Q3</option>
+                                  <option value="4">Q4</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <div class="form-group row">
+                            <label for="exampleInputuname3" class="col-sm-3 control-label">Month*</label>
+                            <div class="col-sm-6">
+                              <div class="input-group">
+                                <div class="input-group-prepend"></div>
+                                <select id="month" name="month" class="form-control">
+                                  <option value="0">January</option>
+                                  <option value="1">February</option>
+                                  <option value="2">March</option>
+                                  <option value="3">April</option>
+                                  <option value="4">May</option>
+                                  <option value="5">June</option>
+                                  <option value="6">July</option>
+                                  <option value="7">August</option>
+                                  <option value="8">September</option>
+                                  <option value="9">October</option>
+                                  <option value="10">November</option>
+                                  <option value="11">December</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          @*<div class="form-group row">
+                      <label for="exampleInputuname3" class="col-sm-3 control-label">From*</label>
+                      <div class="col-sm-4">
+                          <div class="input-group">
+                              <div class="input-group-prepend"></div>
+                              <select class="form-control">
+                                  <option> Please Select  </option>
+                                  <option>Cash and Bank</option>
+                                  <option>Cash and Bank</option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>*@
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <div class="form-group row">
+                            <label for="exampleInputuname3" class="col-sm-3 control-label">Start Date*</label>
+                            <div class="col-sm-6">
+                              <div class="input-group">
+                                <div class="input-group-prepend"></div>
+                                <input id="startdate" name="startdate" type="date" class="form-control"  />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="exampleInputuname3" class="col-sm-3 control-label">End Date*</label>
+                            <div class="col-sm-6">
+                              <div class="input-group">
+                                <div class="input-group-prepend"></div>
+                                <input id="enddate" name="enddate" type="date" class="form-control"  />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      @*<div class="form-group">
+                  <div class="custom-control custom-checkbox mr-sm-2">
+                      <input type="checkbox" class="custom-control-input" id="invalidCheck" value="check" required>
+                      <label class="custom-control-label" for="invalidCheck">Agree to terms and conditions</label>
+                  </div>
+                  <div class="invalid-feedback">
+                      You must agree before submitting.
+                  </div>
+              </div>*@
+                      <button class="btn btn-primary" type="submit">Generate</button>
+                    </form>
+                    <script>
+                      // Example starter JavaScript for disabling form submissions if there are invalid fields
+                      (function () {
+                        'use strict';
+                        window.addEventListener('load', function () {
+                          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                          var forms = document.getElementsByClassName('needs-validation');
+                          // Loop over them and prevent submission
+                          var validation = Array.prototype.filter.call(forms, function (form) {
+                            form.addEventListener('submit', function (event) {
+                              if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                              }
+                              form.classList.add('was-validated');
+                            }, false);
+                          });
+                        }, false);
+                      })();
+                    </script>
+                  </div>
+                  <!-- Row -->
+                  <!-- Row -->
+                  <div class="row">
+                    <div class="col-md-12 ">
+                      <div class="card">
+                        <div class="card-body">
+                          <div id="education_fields"></div>
+                          <div class="row text-center">
+                            <div class="col-sm-3 nopadding">
+                              <div class="card-header text-center">income</div>
+                              <h2><b># @Model.Income  </b></h2>
+                            </div>
+                            <div class="col-sm-3 nopadding">
+                              <div class="card-header">Cost of Good Sold</div>
+                              <h2><b># 0.00</b></h2>
+                            </div>
+                            <div class="col-sm-3 nopadding">
+                              <div class="card-header">Operating Expenses</div>
+                              <h2><b># @Model.OperationExpenses </b></h2>
+                            </div>
+
+                            <div class="col-sm-3 ">
+                              <div class="form-group">
+                                <div class="card-header">Net Profit</div>
+                                <h2><b># @Model.NetProfit</b></h2>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Row -->
+                <!-- Row -->
+              </div>
+            </div>
+
+            <!-- the end of the form -->
+            <div class="row">
+              <div class="col-md-2">
+
+      </div>
+
+              <div class="col-md-8">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row p-t-20">
+                    </div>
+
+                    <div class="table-responsive ">
+                      <table id="example23" class=" table  table-striped" cellspacing="0" width="100%">
+                        <thead>
+                          <tr>
+                            <th>
+                              ACCOUNTS
+                            </th>
+                            <th class="text-right">
+                              @Model.StartDate.ToString("MMM dd, yyyy")<br />
+                              to  @Model.EndDate.ToString("MMM dd, yyyy")
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td> Income</td>
+                            <td class="text-right">NGN @Model.Income</td>
+                          </tr>
+                          <tr>
+                            <td>Cost of Goods Sold</td>
+                            <td class="text-right">NGN 0.00</td>
+                          </tr>
+
+                          <tr>
+                            <td><strong>Gross Profit</strong> <br /><p>As a percentage of Total Income</p></td>
+                            <td class="text-right">
+                              NGN @Model.Income <br />
+                              100.00%
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Operating Expenses</td>
+                            <td class="text-right">NGN @Model.OperationExpenses</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Net Profit</strong> <br /><p>As a percentage of Total Income</p></td>
+                            <td class="text-right">
+                              <strong>
+                                NGN @Model.NetProfit <br />
+                                @Model.NetIncomePercentage%
+                              </strong> 
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-2">
+
+      </div>
+
+            </div>
+
+          </div>
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <div class="right-sidebar">
+                    <div class="slimscrollright">
+                        <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
+                        <div class="r-panel-body">
+                            <ul id="themecolors" class="m-t-20">
+                                <li><b>With Light sidebar</b></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-default" class="default-theme">1</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-green" class="green-theme">2</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-red" class="red-theme">3</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-blue" class="blue-theme">4</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-purple" class="purple-theme">5</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-megna" class="megna-theme">6</a></li>
+                                <li class="d-block m-t-30"><b>With Dark sidebar</b></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-default-dark" class="default-dark-theme working">7</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-green-dark" class="green-dark-theme">8</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-red-dark" class="red-dark-theme">9</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-blue-dark" class="blue-dark-theme">10</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-purple-dark" class="purple-dark-theme">11</a></li>
+                                <li><a href="javascript:void(0)" data-skin="skin-megna-dark" class="megna-dark-theme ">12</a></li>
+                            </ul>
+                            <ul class="m-t-20 chatonline">
+                                <li><b>Chat option</b></li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/1.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/2.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/3.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/7.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../assets/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        @*<footer class="footer">
+                © 2019 HR-ERP DevOps
+            </footer>*@
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+
+
+

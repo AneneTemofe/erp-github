@@ -1,0 +1,336 @@
+﻿@model HRM.ERP.Models.ACCViewModel.CustomerStatementViewModel
+@{
+    ViewData["Title"] = "Generate";
+    Layout = "_LayoutAdmin";
+}
+
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+    <div class="loader">
+        <div class="loader__figure"></div>
+        <p class="loader__label">Elite admin</p>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+
+<div id="main-wrapper">
+  <!-- ============================================================== -->
+  <!-- Topbar header - style you can find in pages.scss -->
+  <!-- Topbar header - style you can find in pages.scss -->
+  <!-- ============================================================== -->
+  @await Html.PartialAsync("_LayoutAdminHeader")
+  <!-- ============================================================== -->
+  <!-- End Topbar header -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- Left Sidebar - style you can find in sidebar.scss  -->
+  <!-- ============================================================== -->
+  @await Html.PartialAsync("_LayoutAccountAside")
+  <!-- ============================================================== -->
+  <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- Page wrapper  -->
+  <!-- Page wrapper  -->
+  <!-- ============================================================== -->
+  <div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+      <!-- ============================================================== -->
+      <!-- Bread crumb and right sidebar toggle -->
+      <!-- ============================================================== -->
+      <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+          <h4 class="text-themecolor">Statement of Account</h4>
+        </div>
+        <div class="col-md-7 align-self-center text-right">
+          <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+              <li class="breadcrumb-item active">Account</li>
+            </ol>
+            @*<a asp-action="" asp-controller="" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Debit</a>
+              <a asp-action="" asp-controller="" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Credit </a>*@
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Bread crumb and right sidebar toggle -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Start Page Content -->
+      <!-- ============================================================== -->
+      <div class="row">
+        <div class="col-12">
+          <!-- ============================================================== -->
+          <!-- Generate Page Content -->
+          <!-- ============================================================== -->
+          <div class="card col-md-10">
+            <div class="card-header">
+              <h2>Customer Statements</h2>
+            </div>
+            <div class="card-body text-center">
+
+
+              <form class="form" method="get">
+
+                <div class="form-group">
+                </div>
+
+                <div class="form-group row">
+                  <label asp-for="CustomerId" class="col-sm-3 control-label">Customer ID*</label>
+                  <div class="col-sm-9">
+                    <div class="input-group">
+                      <div class="input-group-prepend"></div>
+                      <select asp-for="CustomerId" class="form-control" asp-items="ViewBag.CustomerId"></select>
+                      <span asp-validation-for="CustomerId" class="text-danger"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="exampleInputuname3" class="col-sm-3 control-label">From*</label>
+                  <div class="col-sm-9">
+                    <div class="input-group">
+                      <div class="input-group-prepend"></div>
+                      <input id="StartDate" name="StartDate" type="date" class="form-control" required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="exampleInputuname3" class="col-sm-3 control-label">To*</label>
+                  <div class="col-sm-9">
+                    <div class="input-group">
+                      <div class="input-group-prepend"></div>
+                      <input id="EndDate" name="EndDate" type="date" class="form-control" required>
+                    </div>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary my-1">Submit</button>
+              </form>
+
+            </div>
+          </div>
+          <!-- ============================================================== -->
+          <!-- End Generate Page Content -->
+          <!-- ============================================================== -->
+          @if (Model.Customer != null)
+          {
+            <div class="card col-md-10 ">
+              <div class="ca9rd-body">
+                @*<h4 class="card-title">Result</h4>
+          <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>*@
+                <div class="table-responsive m-t-40">
+
+
+                  <!-- ============================================================== -->
+                  <!-- Start Page Content -->
+                  <!-- ============================================================== -->
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="card card-body printableArea">
+                        <h3 class="text-center"><b class="pull-right text-center">Statement of Account</b> @*<span class="pull-right">#5669626</span>*@</h3>
+                        <h4 class="text-center">(Generated on @DateTime.Now.Date.ToString("MMM dd, yyyy"))</h4>
+                        <div class="pull-right text-right">
+                          <address>
+                            <p class="m-t-30"><b>Invoice Date <i class="fa fa-calendar"></i> :@DateTime.Now.Date.ToString("MMM dd, yyyy")</b> @*<h4>Software development</h4>*@</p>
+                            @*<p><b>Due Date :</b> <i class="fa fa-calendar"></i> </p>*@
+                          </address>
+                        </div>
+                        <hr>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="pull-left">
+                              <h2 class="font-bold">Bills</h2>
+                              <div class="row invoice-info m-b-3">
+
+                                <div class="col-sm-4 invoice-col">
+                                  <h5 class="font-bold">To</h5>
+                                  <address>
+                                    <strong>@Model.Customer.CustomerName</strong><br>
+                                    @Model.Customer.Address<br>
+                                    @Model.Customer.City<br>
+                                    @Model.Customer.Phone<br>
+                                    Email: @Model.Customer.Email
+                                  </address>
+                                </div>
+
+                                <!-- /.col -->
+
+                                <div class="col-sm-4 invoice-col">
+                                  @*<h4 class="font-bold">Gaala & Sons,</h4>
+      E 104, Dharti-2,<br>
+      Nr' Viswakarma Temple,<br>
+      Talaja Road,<br>
+      Bhavnagar - 364002*@
+                                </div>
+
+                                <div class="col-sm-4 invoice-col">
+                                  <h5 class="font-bold">From</h5>
+                                  <address>
+                                    <strong>@Model.Organisation.OrganisationName</strong><br>
+                                    @Model.Organisation.Address<br>
+                                    @Model.Organisation.City<br>
+                                    @Model.Organisation.PhoneNumber<br>
+                                    Email: @Model.Organisation.Email
+                                  </address>
+                                </div>
+
+                                <!-- /.col -->
+                                <!-- /.col -->
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="card-header">
+                              <h4 class="text-center">SHOWING ALL INVOICES AND PAYMENTS BETWEEN @Model.StartDate.Date.ToString("MMM dd, yyyy") AND @Model.EndDate.Date.ToString("MMMM dd, yyyy")</h4>
+                            </div>
+                            <div class="table-responsive m-t-40" style="clear: both;">
+                              <table class="table table-hover">
+                                <thead>
+                                  <tr>
+                                    <th class="text-center">Date</th>
+                                    <th>Details</th>
+                                    <th class="text-right">Amount</th>
+                                    @*<th class="text-right">Balance </th>*@
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  @foreach (var item in Model.CustomerStates)
+                                  {
+                                    <tr>
+                                      <td class="text-center">@item.StateDate.ToString("MM-dd-yyyy")</td>
+                                      <td>@item.Details</td>
+                                      <td class="text-right">@item.Amount </td>
+                                      @*<td class="text-right"> $48 </td>*@
+                                    </tr>
+
+                                  }
+                                  @*<tr>
+                                    <td class="text-center">02/03/2019</td>
+                                    <td>Air Conditioner</td>
+                                    <td class="text-right"> $500 </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="text-center">02/03/2019</td>
+                                    <td>RC Cars</td>
+                                    <td class="text-right"> %600 </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="text-center">02/03/2019</td>
+                                    <td>Down Coat</td>
+                                    <td class="text-right">$5 </td>
+                                  </tr>*@
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="pull-right m-t-30 text-right">
+                              @*<p>Sub - Total amount: $13,848</p>
+                              <p>vat (10%) : $138 </p>
+                              <hr>*@
+                              <h3><b>Total :</b> 0</h3>
+                            </div>
+                            <div class="clearfix"></div>
+                            <hr>
+                            <div class="text-right">
+                              @*<button class="btn btn-danger" type="submit"> Proceed to payment </button>*@
+                              <button id="print" class="btn btn-default btn-outline" type="button"> <span><i class="fa fa-print"></i> Print</span> </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- ============================================================== -->
+                  <!-- End PAge Content -->
+                  <!-- ============================================================== -->
+                </div>
+              </div>
+            </div>
+
+          }
+        </div>
+      </div>
+      <!-- ============================================================== -->
+      <!-- End PAge Content -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Right sidebar -->
+      <!-- ============================================================== -->
+      <!-- .right-sidebar -->
+      <div class="right-sidebar">
+        <div class="slimscrollright">
+          <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
+          <div class="r-panel-body">
+            <ul id="themecolors" class="m-t-20">
+              <li><b>With Light sidebar</b></li>
+              <li><a href="javascript:void(0)" data-skin="skin-default" class="default-theme">1</a></li>
+              <li><a href="javascript:void(0)" data-skin="skin-green" class="green-theme">2</a></li>
+              <li><a href="javascript:void(0)" data-skin="skin-red" class="red-theme">3</a></li>
+              <li><a href="javascript:void(0)" data-skin="skin-blue" class="blue-theme">4</a></li>
+              <li><a href="javascript:void(0)" data-skin="skin-purple" class="purple-theme">5</a></li>
+              <li><a href="javascript:void(0)" data-skin="skin-megna" class="megna-theme">6</a></li>
+              <li class="d-block m-t-30"><b>With Dark sidebar</b></li>
+              <li><a href="javascript:void(0)" data-skin="skin-default-dark" class="default-dark-theme working">7</a></li>
+              <li><a href="javascript:void(0)" data-skin="skin-green-dark" class="green-dark-theme">8</a></li>
+              <li><a href="javascript:void(0)" data-skin="skin-red-dark" class="red-dark-theme">9</a></li>
+              <li><a href="javascript:void(0)" data-skin="skin-blue-dark" class="blue-dark-theme">10</a></li>
+              <li><a href="javascript:void(0)" data-skin="skin-purple-dark" class="purple-dark-theme">11</a></li>
+              <li><a href="javascript:void(0)" data-skin="skin-megna-dark" class="megna-dark-theme ">12</a></li>
+            </ul>
+            <ul class="m-t-20 chatonline">
+              <li><b>Chat option</b></li>
+              <li>
+                <a href="javascript:void(0)"><img src="../assets/images/users/1.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"><img src="../assets/images/users/2.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"><img src="../assets/images/users/3.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"><img src="../assets/images/users/7.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"><img src="../assets/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Right sidebar -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Page wrapper  -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- footer -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- End footer -->
+  <!-- ============================================================== -->
+</div>

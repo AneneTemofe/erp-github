@@ -1,0 +1,165 @@
+﻿@model HRM.ERP.Models.HRM.Leave
+@{
+    ViewData["Title"] = "Edit Leave Information";
+    Layout = "_LayoutAdmin";
+}
+
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+    <div class="loader">
+        <div class="loader__figure"></div>
+        <p class="loader__label">Elite admin</p>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
+    <!-- ============================================================== -->
+    <!-- Topbar header - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    @await Html.PartialAsync("_LayoutAdminHeader")
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    @await Html.PartialAsync("_LayoutAdminAside")
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+          
+        
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Over Visitor, Our income , slaes different and  sales prediction -->
+            <!-- ============================================================== -->
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Add New Leave</h4>
+                        <h6 class="card-subtitle">fill in correct information</h6>
+                        <form class="form-horizontal p-t-20" asp-action="Edit" asp-controller="Leaves" method="post">
+
+                            <div asp-validation-summary="ModelOnly"></div>
+
+                            @*<div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-3 control-label">Vacancy*</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <select asp-for="VacancyId" class="form-control" asp-items="ViewBag.VacancyId"></select>
+                                    </div>
+                                </div>
+                            </div>*@
+
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-3 control-label">Leave Title*</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <input type="text" class="form-control" asp-for="LeaveTitle" placeholder="Leave Title" required>
+                                        <span asp-validation-for="LeaveTitle" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-3 control-label">Description*</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <textarea type="text" class="form-control" asp-for="Description" placeholder="Description" required></textarea>
+                                        <span asp-validation-for="Description" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-3 control-label">Start Date*</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <input type="date" class="form-control" asp-for="LeaveStartDate" placeholder="Start Date" required>
+                                        <span asp-validation-for="LeaveStartDate" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-3 control-label">End Date*</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <input type="date" class="form-control" asp-for="LeaveEndDate" placeholder="End Date" required>
+                                        <span asp-validation-for="LeaveEndDate" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-3 control-label">Approved Date*</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <input type="date" class="form-control" asp-for="LeaveApprovedDate" placeholder="Approved Date" required>
+                                        <span asp-validation-for="LeaveApprovedDate" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-3 control-label">Status*</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <select asp-for="Status" class="form-control">
+                                            <option>Active</option>
+                                            <option>Pending</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="form-group row m-b-0">
+                                <div class="offset-sm-3 col-sm-9">
+                                    <button type="submit" class="btn btn-success waves-effect waves-light">Create Leave</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+         
+            <!-- ============================================================== -->
+            <!-- End Right sidebar -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->

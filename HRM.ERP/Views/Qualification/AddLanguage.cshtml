@@ -1,0 +1,137 @@
+﻿@model HRM.ERP.Models.HRM.Language
+@{
+    ViewData["Title"] = "Add Qualification";
+    Layout = "_LayoutAdmin";
+}
+
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+    <div class="loader">
+        <div class="loader__figure"></div>
+        <p class="loader__label">Elite admin</p>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
+    <!-- ============================================================== -->
+    <!-- Topbar header - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    @await Html.PartialAsync("_LayoutAdminHeader")
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    @await Html.PartialAsync("_LayoutAdminAside")
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Over Visitor, Our income , slaes different and  sales prediction -->
+            <!-- ============================================================== -->
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Create New Language</h4>
+                        <h6 class="card-subtitle">fill in correct information</h6>
+                        <form class="form-horizontal p-t-20" asp-action="AddLanguage" asp-controller="Qualification" method="post">
+
+                            <div asp-validation-summary="All"></div>
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-2 control-label">EmployeeID*</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <input type="text" class="form-control" asp-for="employeeId" placeholder="EmployeeID" required="" />
+                                    </div>
+                                </div>
+                                <br />
+                                <label for="exampleInputuname3" class="col-sm-2 control-label">Language*</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <input type="text" class="form-control" asp-for="language" placeholder="language" required="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-2 control-label">Competency*</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <input type="text" class="form-control" asp-for="competency" placeholder="Competency" required="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-2 control-label">Comment*</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <textarea type="text" class="form-control" asp-for="comment" placeholder="Comment" required=""></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-2 control-label">Fluency*</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <input type="text" class="form-control" asp-for="fluency" placeholder="Fluency" required="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="form-group row m-b-0">
+                                <div class="offset-sm-3 col-sm-9">
+                                    <button type="submit" class="btn btn-success waves-effect waves-light" onclick="sucbtn()">Create Language</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Right sidebar -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <footer class="footer">
+        © 2019 Eliteadmin by themedesigner.in
+    </footer>
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->

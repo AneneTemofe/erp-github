@@ -1,0 +1,547 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <UserSecretsId>aspnet-HRM.ERP-029463C2-64CC-45CF-8F8E-3D1D8D1A828F</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Candidates\pages-register3.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Views\Candidates\pages-register3.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\assets\node_modules\bootstrap-datepicker\bootstrap-datepicker.min.css" />
+    <Content Include="wwwroot\assets\node_modules\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="wwwroot\assets\node_modules\bootstrap-material-datetimepicker\css\bootstrap-material-datetimepicker.css" />
+    <Content Include="wwwroot\assets\node_modules\bootstrap-select\bootstrap-select.min.css" />
+    <Content Include="wwwroot\assets\node_modules\bootstrap-switch\bootstrap-switch.min.css" />
+    <Content Include="wwwroot\assets\node_modules\bootstrap-table\dist\bootstrap-table.min.css" />
+    <Content Include="wwwroot\assets\node_modules\bootstrap-tagsinput\dist\bootstrap-tagsinput.css" />
+    <Content Include="wwwroot\assets\node_modules\bootstrap-touchspin\dist\jquery.bootstrap-touchspin.min.css" />
+    <Content Include="wwwroot\assets\node_modules\calendar\dist\fullcalendar.css" />
+    <Content Include="wwwroot\assets\node_modules\chartist-js\dist\chartist-init.css" />
+    <Content Include="wwwroot\assets\node_modules\chartist-js\dist\chartist.min.css" />
+    <Content Include="wwwroot\assets\node_modules\chartist-plugin-tooltip-master\dist\chartist-plugin-tooltip.css" />
+    <Content Include="wwwroot\assets\node_modules\clockpicker\dist\jquery-clockpicker.min.css" />
+    <Content Include="wwwroot\assets\node_modules\cropper\cropper.min.css" />
+    <Content Include="wwwroot\assets\node_modules\css-chart\css-chart.css" />
+    <Content Include="wwwroot\assets\node_modules\datatables\jquery.dataTables.min.html" />
+    <Content Include="wwwroot\assets\node_modules\datatables\media\css\dataTables.bootstrap4.css" />
+    <Content Include="wwwroot\assets\node_modules\dropify\dist\css\dropify.min.css" />
+    <Content Include="wwwroot\assets\node_modules\dropify\src\images\test-image-1.jpg" />
+    <Content Include="wwwroot\assets\node_modules\dropify\src\images\test-image-2.jpg" />
+    <Content Include="wwwroot\assets\node_modules\dropzone-master\dist\dropzone.css" />
+    <Content Include="wwwroot\assets\node_modules\footable\css\footable.bootstrap.min.css" />
+    <Content Include="wwwroot\assets\node_modules\footable\css\footable.core.html" />
+    <Content Include="wwwroot\assets\node_modules\footable\js\footable.all.min.html" />
+    <Content Include="wwwroot\assets\node_modules\gridstack\gridstack.css" />
+    <Content Include="wwwroot\assets\node_modules\horizontal-timeline\css\horizontal-timeline.css" />
+    <Content Include="wwwroot\assets\node_modules\html5-editor\bootstrap-wysihtml5.css" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\all.css" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\aero%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\aero.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\blue%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\blue.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\flat%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\flat.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\green%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\green.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\grey%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\grey.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\orange%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\orange.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\pink%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\pink.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\purple%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\purple.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\red%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\red.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\yellow%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\yellow.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\flat\_all.css" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\futurico\futurico%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\futurico\futurico.css" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\futurico\futurico.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\line\line%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\line\line.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\line\_all.css" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\aero%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\aero.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\blue%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\blue.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\green%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\green.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\grey%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\grey.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\minimal%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\minimal.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\orange%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\orange.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\pink%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\pink.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\purple%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\purple.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\red%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\red.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\yellow%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\yellow.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\minimal\_all.css" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\polaris\polaris%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\polaris\polaris.css" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\polaris\polaris.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\aero%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\aero.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\blue%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\blue.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\green%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\green.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\grey%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\grey.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\orange%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\orange.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\pink%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\pink.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\purple%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\purple.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\red%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\red.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\square%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\square.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\yellow%402x.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\yellow.png" />
+    <Content Include="wwwroot\assets\node_modules\icheck\skins\square\_all.css" />
+    <Content Include="wwwroot\assets\node_modules\ion-rangeslider\css\ion.rangeSlider.css" />
+    <Content Include="wwwroot\assets\node_modules\ion-rangeslider\css\ion.rangeSlider.skinModern.css" />
+    <Content Include="wwwroot\assets\node_modules\ion-rangeslider\img\sprite-skin-modern.png" />
+    <Content Include="wwwroot\assets\node_modules\jquery-asColorPicker-master\dist\css\asColorPicker.css" />
+    <Content Include="wwwroot\assets\node_modules\jquery-asColorPicker-master\dist\images\alpha.png" />
+    <Content Include="wwwroot\assets\node_modules\jquery-asColorPicker-master\dist\images\hue.png" />
+    <Content Include="wwwroot\assets\node_modules\jquery-asColorPicker-master\dist\images\saturation.png" />
+    <Content Include="wwwroot\assets\node_modules\jquery-asColorPicker-master\dist\images\transparent.png" />
+    <Content Include="wwwroot\assets\node_modules\jsgrid\jsgrid-theme.min.css" />
+    <Content Include="wwwroot\assets\node_modules\jsgrid\jsgrid.min.css" />
+    <Content Include="wwwroot\assets\node_modules\Magnific-Popup-master\dist\magnific-popup.css" />
+    <Content Include="wwwroot\assets\node_modules\morrisjs\morris.css" />
+    <Content Include="wwwroot\assets\node_modules\multiselect\css\multi-select.css" />
+    <Content Include="wwwroot\assets\node_modules\multiselect\img\switch.png" />
+    <Content Include="wwwroot\assets\node_modules\nestable\nestable.css" />
+    <Content Include="wwwroot\assets\node_modules\prism\prism.css" />
+    <Content Include="wwwroot\assets\node_modules\register-steps\steps.css" />
+    <Content Include="wwwroot\assets\node_modules\select2\dist\css\select2.min.css" />
+    <Content Include="wwwroot\assets\node_modules\summernote\dist\font\summernote9d3d.eot" />
+    <Content Include="wwwroot\assets\node_modules\summernote\dist\font\summernote9d3d.ttf" />
+    <Content Include="wwwroot\assets\node_modules\summernote\dist\font\summernote9d3d.woff" />
+    <Content Include="wwwroot\assets\node_modules\summernote\dist\font\summernoted41d.eot" />
+    <Content Include="wwwroot\assets\node_modules\summernote\dist\summernote-bs4.css" />
+    <Content Include="wwwroot\assets\node_modules\sweetalert\sweetalert.css" />
+    <Content Include="wwwroot\assets\node_modules\switchery\dist\switchery.min.css" />
+    <Content Include="wwwroot\assets\node_modules\tablesaw-master\dist\tablesaw.css" />
+    <Content Include="wwwroot\assets\node_modules\timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="wwwroot\assets\node_modules\toast-master\css\jquery.toast.css" />
+    <Content Include="wwwroot\assets\node_modules\typeahead.js-master\dist\typehead-min.css" />
+    <Content Include="wwwroot\assets\node_modules\vectormap\jquery-jvectormap-2.0.2.css" />
+    <Content Include="wwwroot\assets\node_modules\wizard\steps.css" />
+    <Content Include="wwwroot\assets\node_modules\x-editable\dist\bootstrap3-editable\css\bootstrap-editable.css" />
+    <Content Include="wwwroot\assets\node_modules\x-editable\dist\bootstrap3-editable\img\clear.png" />
+    <Content Include="wwwroot\assets\node_modules\x-editable\dist\bootstrap3-editable\img\loading.gif" />
+  </ItemGroup>
+
+
+<ItemGroup>
+  <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.3" />
+  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.3" />
+  <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" />
+</ItemGroup>
+<ItemGroup>
+  <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+  <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+</ItemGroup>
+  <ItemGroup>
+    <Content Update="Views\Accounting\AccountDashboard.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Accounting\Addexpense.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Accounting\Addincome.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Accounting\TransactionsIndex.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Accounting\ChartOfAccountsIndex.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Accounting\ReconciliationIndex.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Account\_Layout.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Branches\IndexScaffold.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\CreditDebits\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Customers\Create.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Branches\Delete.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Employees\Reports.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Admin\Dashboard.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Admin\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Candidates\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Candidates\Apply.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Educations\Create.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Educations\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Home\Create.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Home\Organisation - Copy.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Invoices\AddInvoice.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Languages\Create.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Languages\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Leaves\Delete.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Leaves\Edit.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Leaves\Create.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Leaves\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Organisation\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Organization\AddBranch.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Organization\DeleteBranch.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Organization\EditBranch.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Organization\EditGeneral.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Organization\DeleteOrganisation.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Organization\General.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Organization\EditStructure.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Organization\Structure.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Organization\CreateOrganization.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Organization\Branches.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Payroll\History.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Customers\CustomerStatement.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Payroll\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\PIM\EditEmployee.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\PIM\Reports.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\ProductServices\Create.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\ProductServices\Delete.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Purchase\AddReceiptsScaffold.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Purchase\AddBillsScaffold.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Purchase\AddVendorsScaffold.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Purchase\AddVendors.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Purchase\AddReceipts.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Purchase\AddBills.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Purchase\Vendors.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Purchase\ProductServicesIndex.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Purchase\Vendorsx.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Purchase\VendorsIndex.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Purchase\ReceiptsIndex.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Purchase\BillsIndex.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Qualification\AddLanguage.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Qualification\EditLanguage.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Qualification\AddSkillsQualification.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Qualification\DeleteLanguage.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Qualification\EditSkillsQualification.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Qualification\LanguageIndex.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Qualification\DeleteSkills.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Qualification\SkillsIndex.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Recruitment\AddCandidates.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Recruitment\AddVancancies.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Recruitment\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\PIM\AddEmployee.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\PIM\DeleteEmployee.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\PIM\EmployeeIndex.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Report\AccountBalance.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Report\CashFlow.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Report\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Report\BalanceSheet.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Report\ProfitandLoss - Copy.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Report\ProfitandLoss.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\_LayoutAccountAdmin.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\_LayoutAccountAside.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\_LayoutEmployeeAside.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\_LayoutAdminAside - Copy.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\_LayoutAccountHeader.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\_LayoutLandingPageAside.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\_LayoutLandingPageHeader.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Skills\Create.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Skills\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Users\EditUser.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Users\AddUser.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Users\DeleteUser.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Users\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\_LayoutAdmin.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\_LayoutAdminAside.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\_LayoutAside.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\_LayoutAdminHeader.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Shared\_LayoutHeader.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Vacancies\Edit.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Vacancies\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Vacancies\Create.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\Migrations\" />
+    <Folder Include="Views\HRM\" />
+    <Folder Include="Views\Time\" />
+    <Folder Include="wwwroot\assets\node_modules - Copy\bootstrap-material-datetimepicker\js\" />
+    <Folder Include="wwwroot\assets\node_modules - Copy\Chart.js\" />
+    <Folder Include="wwwroot\assets\node_modules - Copy\dropify\dist\js\" />
+    <Folder Include="wwwroot\assets\node_modules - Copy\horizontal-timeline\js\" />
+    <Folder Include="wwwroot\assets\node_modules - Copy\inputmask\dist\min\" />
+    <Folder Include="wwwroot\assets\node_modules - Copy\jquery-asColor\dist\" />
+    <Folder Include="wwwroot\assets\node_modules - Copy\jquery-asGradient\dist\" />
+    <Folder Include="wwwroot\assets\node_modules - Copy\jquery-datatables-editable\" />
+    <Folder Include="wwwroot\assets\node_modules - Copy\knob\" />
+    <Folder Include="wwwroot\assets\node_modules - Copy\multiselect\js\" />
+    <Folder Include="wwwroot\assets\node_modules - Copy\select2\dist\js\" />
+    <Folder Include="wwwroot\assets\node_modules\bootstrap-material-datetimepicker\js\" />
+    <Folder Include="wwwroot\assets\node_modules\Chart.js\" />
+    <Folder Include="wwwroot\assets\node_modules\dropify\dist\js\" />
+    <Folder Include="wwwroot\assets\node_modules\horizontal-timeline\js\" />
+    <Folder Include="wwwroot\assets\node_modules\inputmask\dist\min\" />
+    <Folder Include="wwwroot\assets\node_modules\jquery-asColor\dist\" />
+    <Folder Include="wwwroot\assets\node_modules\jquery-asGradient\dist\" />
+    <Folder Include="wwwroot\assets\node_modules\jquery-datatables-editable\" />
+    <Folder Include="wwwroot\assets\node_modules\knob\" />
+    <Folder Include="wwwroot\assets\node_modules\multiselect\js\" />
+    <Folder Include="wwwroot\assets\node_modules\select2\dist\js\" />
+    <Folder Include="wwwroot\UploadedImages\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\node_modules\bootstrap-treeview-master\dist\bootstrap-treeview-init.js" />
+    <None Include="wwwroot\assets\node_modules\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\assets\node_modules\calendar\dist\cal-init.js" />
+    <None Include="wwwroot\assets\node_modules\calendar\dist\fullcalendar.min.js" />
+    <None Include="wwwroot\assets\node_modules\calendar\jquery-ui.min.js" />
+    <None Include="wwwroot\assets\node_modules\cropper\cropper-init.js" />
+    <None Include="wwwroot\assets\node_modules\datatables\datatables.min.js" />
+    <None Include="wwwroot\assets\node_modules\datatables\media\js\dataTables.bootstrap.js" />
+    <None Include="wwwroot\assets\node_modules\date-paginator\bootstrap-datepaginator.min.js" />
+    <None Include="wwwroot\assets\node_modules\date-paginator\moment.min.js" />
+    <None Include="wwwroot\assets\node_modules\dff\dff.js" />
+    <None Include="wwwroot\assets\node_modules\dropify\dist\fonts\dropify.svg" />
+    <None Include="wwwroot\assets\node_modules\dropzone-master\dist\dropzone.js" />
+    <None Include="wwwroot\assets\node_modules\echarts\echarts-all.js" />
+    <None Include="wwwroot\assets\node_modules\flot.tooltip\js\jquery.flot.tooltip.min.js" />
+    <None Include="wwwroot\assets\node_modules\flot\jquery.flot.crosshair.js" />
+    <None Include="wwwroot\assets\node_modules\flot\jquery.flot.js" />
+    <None Include="wwwroot\assets\node_modules\footable\js\footable.min.js" />
+    <None Include="wwwroot\assets\node_modules\gauge\gauge.min.js" />
+    <None Include="wwwroot\assets\node_modules\gmaps\jquery.gmaps.js" />
+    <None Include="wwwroot\assets\node_modules\gridstack\lodash.js" />
+    <None Include="wwwroot\assets\node_modules\horizontal-timeline\img\cd-arrow.svg" />
+    <None Include="wwwroot\assets\node_modules\html5-editor\bootstrap-wysihtml5.js" />
+    <None Include="wwwroot\assets\node_modules\html5-editor\wysihtml5-0.3.0.js" />
+    <None Include="wwwroot\assets\node_modules\ion-rangeslider\js\ion-rangeSlider\ion.rangeSlider-init.js" />
+    <None Include="wwwroot\assets\node_modules\jquery-sparkline\jquery.sparkline.min.js" />
+    <None Include="wwwroot\assets\node_modules\jquery.easy-pie-chart\dist\jquery.easypiechart.min.js" />
+    <None Include="wwwroot\assets\node_modules\jquery.easy-pie-chart\easy-pie-chart.init.js" />
+    <None Include="wwwroot\assets\node_modules\jqueryui\jquery-ui.min.js" />
+    <None Include="wwwroot\assets\node_modules\jquery\jquery-3.2.1.min.js" />
+    <None Include="wwwroot\assets\node_modules\moment\moment.js" />
+    <None Include="wwwroot\assets\node_modules\morrisjs\morris.js" />
+    <None Include="wwwroot\assets\node_modules\morrisjs\morris.min.js" />
+    <None Include="wwwroot\assets\node_modules\peity\jquery.peity.init.js" />
+    <None Include="wwwroot\assets\node_modules\peity\jquery.peity.min.js" />
+    <None Include="wwwroot\assets\node_modules\popper\popper.min.js" />
+    <None Include="wwwroot\assets\node_modules\prism\prism.js" />
+    <None Include="wwwroot\assets\node_modules\raphael\raphael-min.js" />
+    <None Include="wwwroot\assets\node_modules\session-timeout\idle\session-timeout-idle-init.js" />
+    <None Include="wwwroot\assets\node_modules\skycons\skycons.js" />
+    <None Include="wwwroot\assets\node_modules\sparkline\jquery.sparkline.min.js" />
+    <None Include="wwwroot\assets\node_modules\sticky-kit-master\dist\sticky-kit.min.js" />
+    <None Include="wwwroot\assets\node_modules\summernote\dist\summernote-bs4.min.js" />
+    <None Include="wwwroot\assets\node_modules\sweetalert\jquery.sweet-alert.custom.js" />
+    <None Include="wwwroot\assets\node_modules\sweetalert\sweetalert.min.js" />
+    <None Include="wwwroot\assets\node_modules\tiny-editable\mindmup-editabletable.js" />
+    <None Include="wwwroot\assets\node_modules\tiny-editable\numeric-input-example.js" />
+    <None Include="wwwroot\assets\node_modules\tinymce\tinymce.min.js" />
+    <None Include="wwwroot\assets\node_modules\toast-master\js\jquery.toast.js" />
+    <None Include="wwwroot\assets\node_modules\vectormap\jquery-jvectormap-2.0.2.min.js" />
+    <None Include="wwwroot\assets\node_modules\vectormap\jquery-jvectormap-world-mill-en.js" />
+    <None Include="wwwroot\assets\node_modules\x-editable\dist\bootstrap3-editable\js\bootstrap-editable.js" />
+    <None Include="wwwroot\JS_Script\jquery.min.js" />
+    <None Include="wwwroot\JS_Script\json2.js" />
+  </ItemGroup>
+
+</Project>

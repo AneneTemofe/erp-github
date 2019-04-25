@@ -1,0 +1,164 @@
+﻿@model HRM.ERP.Models.Organisation
+
+@{
+    ViewData["Title"] = "EditOrganisation";
+    Layout = "~/Views/Shared/_LayoutLandingPage.cshtml";
+}
+
+
+<div id="main-wrapper">
+
+
+  @await Html.PartialAsync("_LayoutLandingPageHeader")
+  <!-- ============================================================== -->
+  <!-- End Topbar header -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- Left Sidebar - style you can find in sidebar.scss  -->
+  <!-- ============================================================== -->
+  @await Html.PartialAsync("_LayoutLandingPageAside")
+
+
+  <div class="page-wrapper">
+
+    <div class="container-fluid">
+      <!-- ============================================================== -->
+      <!-- Bread crumb and right sidebar toggle -->
+      <!-- ============================================================== -->
+      <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+          <h4 class="text-themecolor">Organisation</h4>
+        </div>
+        <div class="col-md-7 align-self-center text-right">
+          <div class="d-flex justify-content-end align-items-center">
+            @*<ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+              <li class="breadcrumb-item active">Users</li>
+          </ol>*@
+            <a asp-action="Create" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Create New</a>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Bread crumb and right sidebar toggle -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Start Page Content -->
+      <!-- ============================================================== -->
+      <div class="row">
+        <div class="col-md-4">
+          <form asp-action="EditOrganisation" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div hidden class="form-group">
+              <label asp-for="ApplicationUserId" class="control-label"></label>
+              <input asp-for="ApplicationUserId" class="form-control" />
+              <span asp-validation-for="ApplicationUserId" class="text-danger"></span>
+          </div>
+            <div class="form-group">
+              <label asp-for="OrganisationName" class="control-label"></label>
+              <input asp-for="OrganisationName" class="form-control" />
+              <span asp-validation-for="OrganisationName" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+              <label asp-for="NoOfEmployees" class="control-label"></label>
+              <input asp-for="NoOfEmployees" class="form-control" />
+              <span asp-validation-for="NoOfEmployees" class="text-danger"></span>
+          </div>*@
+            <div class="form-group">
+              <label asp-for="PhoneNumber" class="control-label"></label>
+              <input asp-for="PhoneNumber" class="form-control" />
+              <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+              <label asp-for="Email" class="control-label"></label>
+              <input asp-for="Email" class="form-control" />
+              <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+              <label asp-for="Address" class="control-label"></label>
+              <input asp-for="Address" class="form-control" />
+              <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+              <label asp-for="City" class="control-label"></label>
+              <input asp-for="City" class="form-control" />
+              <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+              <label asp-for="ZipCode" class="control-label"></label>
+              <input asp-for="ZipCode" class="form-control" />
+              <span asp-validation-for="ZipCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+              <label asp-for="TaxId" class="control-label"></label>
+              <input asp-for="TaxId" class="form-control" />
+              <span asp-validation-for="TaxId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+              <label asp-for="RegistrationNo" class="control-label"></label>
+              <input asp-for="RegistrationNo" class="form-control" />
+              <span asp-validation-for="RegistrationNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+              <label asp-for="State" class="control-label"></label>
+              <input asp-for="State" class="form-control" />
+              <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+              <label asp-for="Country" class="control-label"></label>
+              <input asp-for="Country" class="form-control" />
+              <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+              <label asp-for="DateCreated" class="control-label"></label>
+              <input asp-for="DateCreated" class="form-control" />
+              <span asp-validation-for="DateCreated" class="text-danger"></span>
+          </div>
+          <div class="form-group">
+              <label asp-for="DateUpdated" class="control-label"></label>
+              <input asp-for="DateUpdated" class="form-control" />
+              <span asp-validation-for="DateUpdated" class="text-danger"></span>
+          </div>
+          <div class="form-group">
+              <label asp-for="DateModified" class="control-label"></label>
+              <input asp-for="DateModified" class="form-control" />
+              <span asp-validation-for="DateModified" class="text-danger"></span>
+          </div>
+          <div class="form-group">
+              <div class="checkbox">
+                  <label>
+                      <input asp-for="IsDeleted" /> @Html.DisplayNameFor(model => model.IsDeleted)
+                  </label>
+              </div>
+          </div>*@
+            <div class="form-group">
+              <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- ============================================================== -->
+      <!-- End PAge Content -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Right sidebar -->
+      <!-- ============================================================== -->
+      <!-- .right-sidebar -->
+      <!-- ============================================================== -->
+      <!-- End Page wrapper  -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- footer -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- End footer -->
+      <!-- ============================================================== -->
+
+    </div>
+
+  </div>
+
+</div>
+
+

@@ -1,0 +1,278 @@
+﻿@model HRM.ERP.Models.HRM.Branch
+@{
+  ViewData["Title"] = "Add Branch";
+  Layout = "_LayoutAdmin";
+  // Layout = null;
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+  <div class="loader">
+    <div class="loader__figure"></div>
+    <p class="loader__label">Elite admin</p>
+  </div>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
+  <!-- ============================================================== -->
+  <!-- Topbar header - style you can find in pages.scss -->
+  <!-- ============================================================== -->
+  @await Html.PartialAsync("_LayoutAdminHeader")
+  <!-- ============================================================== -->
+  <!-- End Topbar header -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- Left Sidebar - style you can find in sidebar.scss  -->
+  <!-- ============================================================== -->
+  @await Html.PartialAsync("_LayoutAdminAside")
+  <!-- ============================================================== -->
+  <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- Page wrapper  -->
+  <!-- ============================================================== -->
+  <div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+      <!-- ============================================================== -->
+      <!-- Bread crumb and right sidebar toggle -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Over Visitor, Our income , slaes different and  sales prediction -->
+      <!-- ============================================================== -->
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Add New Branch</h4>
+            <h6 class="card-subtitle">fill in correct information</h6>
+            <form class="form-horizontal p-t-20" asp-action="Create" asp-controller="Branches" method="post">
+
+              <div asp-validation-summary="All"></div>
+
+              <div class="form-group row">
+                <label for="exampleInputuname3" class="col-sm-3 control-label">Branch Name*</label>
+                <div class="col-sm-9">
+                  <div class="input-group">
+                    <div class="input-group-prepend"></div>
+                    <input type="text" class="form-control" asp-for="BranchName" placeholder="Branch Name" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="exampleInputuname3" class="col-sm-3 control-label">Phone Number*</label>
+                <div class="col-sm-9">
+                  <div class="input-group">
+                    <div class="input-group-prepend"></div>
+                    <input type="text" class="form-control" asp-for="PhoneNumber" placeholder="Phone Number" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="exampleInputuname3" class="col-sm-3 control-label">Email*</label>
+                <div class="col-sm-9">
+                  <div class="input-group">
+                    <div class="input-group-prepend"></div>
+                    <input type="email" class="form-control" asp-for="Email" placeholder="Email" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="exampleInputuname3" class="col-sm-3 control-label">Address*</label>
+                <div class="col-sm-9">
+                  <div class="input-group">
+                    <div class="input-group-prepend"></div>
+                    <input type="text" class="form-control" asp-for="Address" placeholder="Address" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="exampleInputuname3" class="col-sm-3 control-label">Country*</label>
+                <div class="col-sm-9">
+                  <div class="input-group">
+                    <div class="input-group-prepend"></div>
+                    <select id="country" class="form-control" asp-for="Country" required><option value="@null">-- Country --</option></select>
+                    <span asp-validation-for="Country" class="text-danger"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="exampleInputuname3" class="col-sm-3 control-label">State*</label>
+                <div class="col-sm-9">
+                  <div class="input-group">
+                    <div class="input-group-prepend"></div>
+                    <select id="region" class="form-control" asp-for="State" required><option value=@null>-- State --</option></select>
+                    <span asp-validation-for="State" class="text-danger"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="exampleInputuname3" class="col-sm-3 control-label">City*</label>
+                <div class="col-sm-9">
+                  <div class="input-group">
+                    <div class="input-group-prepend"></div>
+                    <select id="city" class="form-control" asp-for="City" required><option value="@null">-- City --</option></select>
+                    <span asp-validation-for="City" class="text-danger"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="exampleInputuname3" class="col-sm-3 control-label">Zip Code*</label>
+                <div class="col-sm-9">
+                  <div class="input-group">
+                    <div class="input-group-prepend"></div>
+                    <input type="text" class="form-control" asp-for="ZipCode" placeholder="Zip Code" required>
+                  </div>
+                </div>
+              </div>
+
+              <hr />
+              <div class="form-group row m-b-0">
+                <div class="offset-sm-3 col-sm-9">
+                  <button type="submit" class="btn btn-success waves-effect waves-light">Add Branch</button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Right sidebar -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Page wrapper  -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- footer -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- End footer -->
+  <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+@section Scripts {
+  @await Html.PartialAsync("_ValidationScriptsPartial")
+}
+
+
+<script>
+  $(document).ready(function () {
+    //-------------------------------SELECT CASCADING-------------------------//
+    var selectedCountry = selectedRegion = selectedCity = countryCode = "";
+    // This is a demo API key for testing purposes. You should rather request your API key (free) from http://battuta.medunes.net/
+    var BATTUTA_KEY = "00000000000000000000000000000000";
+    // Populate country select box from battuta API
+    url =
+      "https://battuta.medunes.net/api/country/all/?key=" +
+      BATTUTA_KEY +
+      "&callback=?";
+    // EXTRACT JSON DATA.
+    $.getJSON(url, function (data) {
+      $.each(data, function (index, value) {
+        // APPEND OR INSERT DATA TO SELECT ELEMENT. Set the country code in the id section rather than in the value.
+        $("#country").append(
+          '<option id="' + value.code + '" value="' + value.code + '">' + value.name + "</option>"
+        );
+      });
+    });
+    // Country selected --> update region list .
+    $("#country").change(function () {
+      selectedCountry = this.options[this.selectedIndex].text;
+      countryCode = $(this).children(":selected").attr("id");
+      url =
+        "https://battuta.medunes.net/api/region/" +
+        countryCode +
+        "/all/?key=" +
+        BATTUTA_KEY +
+        "&callback=?";
+      $.getJSON(url, function (data) {
+        $("#region option").remove();
+        $.each(data, function (index, value) {
+          // APPEND OR INSERT DATA TO SELECT ELEMENT.
+          $("#region").append(
+            '<option value="' + value.region + '">' + value.region + "</option>"
+          );
+        });
+      });
+    });
+    // Region selected --> updated city list
+    $("#region").on("change", function () {
+      selectedRegion = this.options[this.selectedIndex].text;
+      // Populate country select box from battuta API
+      region = $("#region").val();
+      url =
+        "https://battuta.medunes.net/api/city/" +
+        countryCode +
+        "/search/?region=" +
+        region +
+        "&key=" +
+        BATTUTA_KEY +
+        "&callback=?";
+      $.getJSON(url, function (data) {
+        $("#city option").remove();
+        $.each(data, function (index, value) {
+          // APPEND OR INSERT DATA TO SELECT ELEMENT.
+          $("#city").append(
+            '<option value="' + value.city + '">' + value.city + "</option>"
+          );
+        });
+      });
+    });
+    // city selected --> update location string
+    $("#city").on("change", function () {
+      selectedCity = this.options[this.selectedIndex].text;
+      $("#location").html(
+        "Locatation: Country: " +
+        selectedCountry +
+        ", Region: " +
+        selectedRegion +
+        ", City: " +
+        selectedCity
+      );
+    });
+
+  });
+  // process form
+  function processForm() {
+    var username = password = country = region = city = '';
+    username = $('#username').val();
+    password = $('#password').val();
+    country = $('#country').val();
+    region = $('#region').val();
+    city = $('#city').val();
+    if (username != '' && password != '' && country != '' && region != '' && city != '') {
+      $("#location").html(
+        "Username: " + username +
+        " /Password: " + password +
+        " /Locatation: Country: " +
+        country +
+        ", Region: " +
+        region +
+        ", City: " +
+        city
+      );
+    } else {
+      $("#location").html('Complete Form 1st');
+      return false;
+    }
+  }
+</script>

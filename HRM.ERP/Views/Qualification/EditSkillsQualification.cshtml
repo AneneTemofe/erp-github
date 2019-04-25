@@ -1,0 +1,129 @@
+﻿@model HRM.ERP.Models.HRM.Skills
+@{
+    ViewData["Title"] = "Add Qualification";
+    Layout = "_LayoutAdmin";
+}
+
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+    <div class="loader">
+        <div class="loader__figure"></div>
+        <p class="loader__label">Elite admin</p>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
+    <!-- ============================================================== -->
+    <!-- Topbar header - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    @await Html.PartialAsync("_LayoutAdminHeader")
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    @await Html.PartialAsync("_LayoutAdminAside")
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+          
+        
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Over Visitor, Our income , slaes different and  sales prediction -->
+            <!-- ============================================================== -->
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Edit Your Qualification</h4>
+                        <h6 class="card-subtitle">fill in correct information</h6>
+                        <form class="form-horizontal p-t-20" asp-action="EditSkillsQualification" asp-controller="Qualification" method="post">
+                            <div asp-validation-summary="All"></div>
+                            <input type="hidden" asp-for="id" />
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-2 control-label">Employee ID*</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <input type="text" class="form-control" asp-for="employeeId" placeholder="EmployeeID" />
+                                    </div>
+                                </div>
+                                <br />
+                                <label for="exampleInputuname3" class="col-sm-2 control-label">Skill Name*</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <input type="text" class="form-control" asp-for="skillName" placeholder="SkillName" />
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-2 control-label">Years of Experience*</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <input type="text" class="form-control" asp-for="yearsOfExperience" placeholder="Years of Experience" />
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="form-group row">
+                                <label for="exampleInputuname3" class="col-sm-2 control-label">Comment*</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"></div>
+                                        <textarea type="text" class="form-control" asp-for="comment" placeholder="Comment"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+
+                            <div class="form-group row m-b-0">
+                                <div class="offset-sm-3 col-sm-9">
+                                    <button type="submit" class="btn btn-success waves-effect waves-light">Edit Skills</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+         
+            <!-- ============================================================== -->
+            <!-- End Right sidebar -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <footer class="footer">
+        © 2019 Eliteadmin by themedesigner.in
+    </footer>
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->

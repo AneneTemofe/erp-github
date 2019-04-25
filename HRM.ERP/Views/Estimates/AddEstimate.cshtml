@@ -1,0 +1,398 @@
+﻿@model HRM.ERP.Models.ACCViewModel.QuoteViewModel
+
+@{
+  ViewData["Title"] = "AddEstimate";
+  Layout = "~/Views/Shared/_LayoutAccountAdmin.cshtml";
+}
+
+
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+  <div class="loader">
+    <div class="loader__figure"></div>
+    <p class="loader__label">Elite admin</p>
+  </div>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+
+<div id="main-wrapper">
+  <!-- ============================================================== -->
+  <!-- Topbar header - style you can find in pages.scss -->
+  <!-- Topbar header - style you can find in pages.scss -->
+  <!-- ============================================================== -->
+  @await Html.PartialAsync("_LayoutAdminHeader")
+  <!-- ============================================================== -->
+  <!-- End Topbar header -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- Left Sidebar - style you can find in sidebar.scss  -->
+  <!-- ============================================================== -->
+  @await Html.PartialAsync("_LayoutAccountAside")
+  <!-- ============================================================== -->
+  <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- Page wrapper  -->
+  <!-- ============================================================== -->
+  <div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+      <!-- ============================================================== -->
+      <!-- Bread crumb and right sidebar toggle -->
+      <!-- ============================================================== -->
+      <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+          <h4 class="text-themecolor">Quote</h4>
+        </div>
+        <div class="col-md-7 align-self-center text-right">
+          <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+              <li class="breadcrumb-item active">
+                  Quote
+              </li>
+            </ol>
+            @*<button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Create New</button>*@
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Bread crumb and right sidebar toggle -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Start Page Content -->
+      <!-- ============================================================== -->
+      <form asp-action="AddEstimate" method="post">
+
+        <div class="row">
+          <div class="col-md-2">
+          </div>
+
+          <div class="col-md-8">
+            <div class="card card-body printableArea">
+              <div class="row">
+                <h3><b>QUOTE NO:</b> <input class="form-control col-md-1 text-right" disabled value="#@Model.QuoteNo" /></h3>
+                <input hidden asp-for="Id" />
+                @* <form>
+              <div class="form-group mb-2 form-inline">
+               <label for="inputPassword2" class="col-3">N0</label>
+        <input type="text" disabled class="form-control col-md-8" placeholder="Estimate Number" value="@Model.QuoteNo">
+      </div>
+    </form>*@
+              </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="pull-right text-right">
+                        <address>
+                          <h3> &nbsp;<b class="text-danger">@Model.Organisation.OrganisationName</b></h3>
+                          <p class="text-muted m-l-5">
+                            @Model.Organisation.Address
+                            <br /> @Model.Organisation.City,
+                            <br /> @Model.Organisation.State.
+                            @*<br /> @Model.Organisation.Country - @Model.Organisation.ZipCode*@
+                          </p>
+                          <p class="m-t-30">
+
+                            <b>Quote Date :</b> <i class="fa fa-calendar"></i> <input asp-for="InvoiceDate" type="date" />
+                            <span asp-validation-for="InvoiceDate" class="text-danger"></span>
+                          </p>
+                          @*<p>
+                            <b>Due Date :</b> <i class="fa fa-calendar"></i> <input asp-for="DueDate" type="date" />
+                            <span asp-validation-for="DueDate" class="text-danger"></span>
+                          </p>*@
+
+                        </address>
+                      </div>
+                      <div class="pull-left ">
+                        <address>
+                          <h4>To:</h4>
+                          <div class="row">
+                            <div class="col-3">
+                              <div class="form-group">
+                                <label class="control-label">Customer</label>
+                                <select asp-for="CustomerId" class="form-control" asp-items="ViewBag.CustomerId"></select>
+                              </div>
+
+                            </div>
+                          </div>
+
+                          @*<h4 class="font-bold">Gaala & Sons,</h4>
+              <p class="text-muted m-l-30">
+                E 104, Dharti-2,
+                <br /> Nr' Viswakarma Temple,
+                <br /> Talaja Road,
+                <br /> Bhavnagar - 364002
+              </p>*@
+                        </address>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="table-responsive m-t-40" style="clear: both;">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th>Item/Service</th>
+                              <th>Description</th>
+                              <th class="text-right">Quantity</th>
+                              <th class="text-right">Unit Cost</th>
+                              <th class="text-right">Total</th>
+                              <th class="text-right">+/-</th>
+
+                            </tr>
+                          </thead>
+                          <tbody>
+                            @*<tr>
+                  <td>Air Conditioner</td>
+                  <td></td>
+                  <td class="text-right"> 3 </td>
+                  <td class="text-right"> $500 </td>
+                  <td class="text-right"> $1500 </td>
+                  <td>
+                    <a asp-action="Delete" class="btn btn-sm btn-danger">-</a>
+                  </td>
+                </tr>*@
+                            @foreach (var item in Model.ItemsEIRs)
+                            {
+                              <tr>
+                                <td>@item.Item</td>
+                                <td>@item.Description</td>
+                                <td class="text-right">@item.Quantity </td>
+                                <td class="text-right"> ₦ @item.Price </td>
+                                <td class="text-right"> ₦ @item.Amount </td>
+                                <td>
+                                  @*<a asp-action="Delete" class="btn btn-sm btn-danger" asp-route-id="@item.Id">-</a>*@
+                                  @*<a asp-action="Delete" class="btn btn-sm btn-danger" asp-route-id="@item.Id">-</a>*@
+                                  @*<input id="itemId" value="@item.Id" hidden/>*@
+                                  <button id="clickDelete" name="@item.Id" value="@item.Id" class="btn btn-sm btn-danger">-</button>
+
+                                </td>
+
+                              </tr>
+
+                            }
+                            <tr>
+
+                              <td>
+                                <input hidden type="text" id="addEstimateId" name="bdate" class="form-control" value="@Model.EstimateId">
+                                <input type="text" id="addItem" name="bdate" class="form-control" placeholder="Item/Service">
+                              </td>
+                              <td>
+                                <input type="text" id="addDescription" name="bdate" class="form-control" placeholder="Description">
+                              </td>
+                              <td class="text-right">
+                                <input type="number" id="addQuantity" name="bdate" class="form-control text-right" placeholder="0">
+                              </td>
+                              <td class="text-right">
+                                <input type="number" id="addUnitCost" name="bdate" class="form-control text-right" placeholder="0.00">
+                              </td>
+                              <td class="text-right">
+                                <input disabled type="text" id="addAmount" name="bdate" class="form-control text-right" placeholder="0.00">
+                              </td>
+                              <td>
+                                <button id="clickb" name="clickb" class="btn btn-sm btn-success">+</button>
+                              </td>
+
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="pull-right m-t-30 text-right">
+                        <p>Sub - Total amount:  ₦ @Model.SubTotal</p>
+                        <p>vat (0%) : ₦ 0.00 </p>
+                        <hr>
+                        <h3><b>Total :</b> ₦ @Model.Total</h3>
+                      </div>
+                      <div class="clearfix"></div>
+                      <hr>
+                      <div class="text-right">
+                        <button class="btn btn-danger" type="submit"> Done  </button>
+                        @*<button id="print" class="btn btn-default btn-outline" type="button"> <span><i class="fa fa-print"></i> Save</span> </button>*@
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-2">
+          </div>
+
+        </div>
+        </form>
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <div class="right-sidebar">
+          <div class="slimscrollright">
+            <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
+            <div class="r-panel-body">
+              <ul id="themecolors" class="m-t-20">
+                <li><b>With Light sidebar</b></li>
+                <li><a href="javascript:void(0)" data-skin="skin-default" class="default-theme">1</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-green" class="green-theme">2</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-red" class="red-theme">3</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-blue" class="blue-theme">4</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-purple" class="purple-theme">5</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-megna" class="megna-theme">6</a></li>
+                <li class="d-block m-t-30"><b>With Dark sidebar</b></li>
+                <li><a href="javascript:void(0)" data-skin="skin-default-dark" class="default-dark-theme working">7</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-green-dark" class="green-dark-theme">8</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-red-dark" class="red-dark-theme">9</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-blue-dark" class="blue-dark-theme">10</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-purple-dark" class="purple-dark-theme">11</a></li>
+                <li><a href="javascript:void(0)" data-skin="skin-megna-dark" class="megna-dark-theme ">12</a></li>
+              </ul>
+              <ul class="m-t-20 chatonline">
+                <li><b>Chat option</b></li>
+                <li>
+                  <a href="javascript:void(0)"><img src="../assets/images/users/1.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)"><img src="../assets/images/users/2.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)"><img src="../assets/images/users/3.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)"><img src="../assets/images/users/7.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)"><img src="../assets/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Page wrapper  -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- footer -->
+  <!-- ============================================================== -->
+  @*<footer class="footer">
+        © 2019 HR-ERP DevOps
+    </footer>*@
+  <!-- ============================================================== -->
+  <!-- End footer -->
+  <!-- ============================================================== -->
+</div>
+
+@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>*@
+@*<script type="text/javascript" src="http://cdn.jsdelivr.net/json2/0.1/json2.js"></script>*@
+
+<script type="text/javascript" src="~/JS_Script/jquery.min.js"></script>
+<script type="text/javascript" src="~/JS_Script/json2.js"></script>
+
+<script type="text/javascript">
+
+  $(document).ready(function () {
+
+    $("#clickb").click(function (event) {
+
+      event.preventDefault();
+
+      var EstimateItem = {
+        EstimateId: $("#addEstimateId").val(),
+        Item: $("#addItem").val(),
+        Description: $("#addDescription").val(),
+        Quantity: $("#addQuantity").val(),
+        UnitCost: $("#addUnitCost").val(),
+        Amount: $("#addAmount").val(),
+      };
+
+
+      // console.log(Items);
+      console.log(EstimateItem);
+
+      $.ajax({
+        type: "POST",
+        url: "/Estimates/AddItem",
+        data: JSON.stringify(EstimateItem),
+        dataType: "json",
+        contentType: 'application/json; charset=utf-8',
+        headers: {
+          RequestVerificationToken:
+            $('input:hidden[name="__RequestVerificationToken"]').val()
+        },
+        success: function (r) {
+          alert(r.msg);
+          window.location.reload();
+
+        },
+        error: function () {
+          alert("Error occured!!")
+        }
+      });
+    });
+
+    $("#clickDelete").click(function (event) {
+
+      event.preventDefault();
+      //var EstimateItem = {
+      //  EstimateId: $("#addEstimateId").val(),
+      //  Item: $("#addItem").val(),
+      //  Description: $("#addDescription").val(),
+      //  Quantity: $("#addQuantity").val(),
+      //  UnitCost: $("#addUnitCost").val(),
+      //  Amount: $("#addAmount").val(),
+      //};
+
+      var Id = event
+
+      // console.log(Items);
+      console.log(Id);
+
+      $.ajax({
+        type: "POST",
+        url: "/Estimates/DeleteItem",
+        data: JSON.stringify(Id),
+        dataType: "json",
+        contentType: 'application/json; charset=utf-8',
+        headers: {
+          RequestVerificationToken:
+            $('input:hidden[name="__RequestVerificationToken"]').val()
+        },
+        success: function (r) {
+          alert(r.msg);
+          window.location.reload();
+        },
+        error: function () {
+          alert("Error occured!!")
+        }
+      });
+
+
+    });
+
+  });
+
+</script>

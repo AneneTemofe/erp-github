@@ -1,0 +1,175 @@
+﻿@model HRM.ERP.Models.HRM.Vacancy
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Vacancy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VacancyName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VacancyName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HiringManager)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HiringManager)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfPositions)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NoOfPositions)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateUpdated)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateUpdated)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateModified)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateModified)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsDeleted)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.JobTitle.Id)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> 
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2>Delete</h2>
+
+                <h3>Are you sure you want to delete this?</h3>
+                <div>
+                    <h4>Vacancy</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.VacancyName)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.VacancyName)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.HiringManager)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.HiringManager)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.NoOfPositions)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.NoOfPositions)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Description)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DateCreated)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.DateCreated)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DateUpdated)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.DateUpdated)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DateModified)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.DateModified)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.IsDeleted)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.IsDeleted)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.JobTitle)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.JobTitle.Id)
+                        </dd>
+                    </dl>
+
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="Id" />
+                        <input type="submit" value="Delete" class="btn btn-default" /> |
+                        <a asp-action="Index">Back to List</a>
+                    </form>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

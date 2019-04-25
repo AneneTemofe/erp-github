@@ -1,0 +1,112 @@
+﻿@model HRM.ERP.Models.ACC.Estimate
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LayoutAccountAdmin.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>Estimate</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="CustomerId" class="control-label"></label>
+                <select asp-for="CustomerId" class="form-control" asp-items="ViewBag.CustomerId"></select>
+                <span asp-validation-for="CustomerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstimateTitle" class="control-label"></label>
+                <input asp-for="EstimateTitle" class="form-control" />
+                <span asp-validation-for="EstimateTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstimateId" class="control-label"></label>
+                <input asp-for="EstimateId" class="form-control" />
+                <span asp-validation-for="EstimateId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstimateNo" class="control-label"></label>
+                <input asp-for="EstimateNo" class="form-control" />
+                <span asp-validation-for="EstimateNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstimateDate" class="control-label"></label>
+                <input asp-for="EstimateDate" class="form-control" />
+                <span asp-validation-for="EstimateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExpireDate" class="control-label"></label>
+                <input asp-for="ExpireDate" class="form-control" />
+                <span asp-validation-for="ExpireDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="POSO" class="control-label"></label>
+                <input asp-for="POSO" class="form-control" />
+                <span asp-validation-for="POSO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subheading" class="control-label"></label>
+                <input asp-for="Subheading" class="form-control" />
+                <span asp-validation-for="Subheading" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Footer" class="control-label"></label>
+                <input asp-for="Footer" class="form-control" />
+                <span asp-validation-for="Footer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Memo" class="control-label"></label>
+                <input asp-for="Memo" class="form-control" />
+                <span asp-validation-for="Memo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Total" class="control-label"></label>
+                <input asp-for="Total" class="form-control" />
+                <span asp-validation-for="Total" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrandTotal" class="control-label"></label>
+                <input asp-for="GrandTotal" class="form-control" />
+                <span asp-validation-for="GrandTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateCreated" class="control-label"></label>
+                <input asp-for="DateCreated" class="form-control" />
+                <span asp-validation-for="DateCreated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateUpdated" class="control-label"></label>
+                <input asp-for="DateUpdated" class="form-control" />
+                <span asp-validation-for="DateUpdated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateModified" class="control-label"></label>
+                <input asp-for="DateModified" class="form-control" />
+                <span asp-validation-for="DateModified" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="IsDeleted" /> @Html.DisplayNameFor(model => model.IsDeleted)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
