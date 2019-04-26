@@ -4,14 +4,14 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <!-- Preloader - style you can find in spinners.css -->
 <!-- THE START OF THE NEW FORM LINKS -->
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 <!-- Theme style -->
 
-@*<link rel="stylesheet" href="~/dist/dist/css/style.css">*@
+<link rel="stylesheet" href="~/dist/dist/css/style.css">
 <link rel="stylesheet" href="~/dist/dist/css/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="~/dist/dist/css/et-line-font/et-line-font.css">
 
@@ -21,7 +21,6 @@
 <link rel="stylesheet" href="~/dist/dist/plugins/formwizard/jquery-steps.css">
 <!-- Preloader - style you can find in spinners.css -->
 <!-- ============================================================== -->
-<!-- Preloader - style you can find in spinners.css -->
 <!-- ============================================================== -->
 <div class="preloader">
     <div class="loader">
@@ -69,184 +68,123 @@
                         <h6 class="card-subtitle">fill in correct information</h6>
                         <div class="row">
                             <div class="col-md-12">
+                                <h4 class="text-black m-b-3">Step Wizard with Validation</h4>
                                 <div id="demo1">
                                     <div class="step-app">
                                         <ul class="step-steps">
                                             <li><a href="#tab1"><span class="number">1</span> Personal Info</a></li>
                                             <li><a href="#tab2"><span class="number">2</span> Job Status</a></li>
-                                            <li><a href="#tab3"><span class="number">3</span> Account Info</a></li>
-                                            <li><a href="#tab4"><span class="number">4</span> Next of Kin</a></li>
+                                            <li><a href="#tab3"><span class="number">3</span> Interview</a></li>
+                                            <li><a href="#tab4"><span class="number">4</span> Remark</a></li>
                                         </ul>
                                         <div class="step-content">
                                             <div class="step-tab-panel" id="tab1">
                                                 <form name="frmRes" id="frmRes">
                                                     <div class="row m-t-2">
-                                                        <div class="col-md-4">
+                                                        <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="firstName1">Surname:</label>
+                                                                <label for="firstName1">First Name:</label>
                                                                 <input class="form-control" type="text" name="firstname" required>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-4">
+                                                        <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="lastName1">First Name*</label>
-                                                                <input class="form-control" type="text" name="lastname" required>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="lastName1">Middle Name*</label>
+                                                                <label for="lastName1">Last Name:</label>
                                                                 <input class="form-control" type="text" name="lastname" required>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-md-3">
+                                                        <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="firstName1">Date of Birth*</label>
-                                                                <input class="form-control" type="date" name="date of birth" required>
+                                                                <label for="firstName1">Email Address:</label>
+                                                                <input class="form-control" type="text" name="email" required>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-3">
+                                                        <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="lastName1">Gender*</label>
-                                                                <select class="form-control" type="text" name="lastname" required>
-                                                                    <option selected>Select Gender</option>
-                                                                    <option>Male</option>
-                                                                    <option>Female</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <div class="form-group">
-                                                                <label for="lastName1">Marital Status*</label>
-                                                                <select class="form-control" type="text" name="lastname" required>
-                                                                    <option selected>Select Marital Status</option>
-                                                                    <option>Married</option>
-                                                                    <option>Divorced</option>
-                                                                    <option>Single</option>
-                                                                    <option>Widow</option>
-                                                                    <option>Widower</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <div class="form-group">
-                                                                <label for="lastName1">Phone Number*</label>
-                                                                <input class="form-control" type="text" required>
+                                                                <label for="lastName1">Phone Number:</label>
+                                                                <input class="form-control" type="text" name="phoneno" required>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="firstName1">Address*</label>
-                                                                <input class="form-control" type="text" required>
+                                                                <label for="location1">Select City :</label>
+                                                                <select class="custom-select form-control" id="location1" name="location">
+                                                                    <option value="">Select City</option>
+                                                                    <option value="Amsterdam">India</option>
+                                                                    <option value="Berlin">USA</option>
+                                                                    <option value="Frankfurt">Dubai</option>
+                                                                </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="lastName1">Country*</label>
-                                                                <select id="country" class="form-control" required><option value="@null">-- Country --</option></select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="location1">State*</label>
-                                                                <select id="region" class="form-control"  required><option value=@null>-- State --</option></select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="date1">City*</label>
-                                                                <select id="city" class="form-control" required><option value="@null">-- City --</option></select>
+                                                                <label for="date1">Date of Birth :</label>
+                                                                <input class="form-control" id="date1" type="date">
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </form>
                                             </div>
                                             <div class="step-tab-panel" id="tab2">
-                                                @*<h3>Tab2</h3>*@
+                                                <h3>Tab2</h3>
                                                 <form name="frmInfo" id="frmInfo">
                                                     <div class="row m-t-2">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="jobTitle1">Employee ID*</label>
-                                                                <input class="form-control" type="text" required>
+                                                                <label for="jobTitle1">Job Title :</label>
+                                                                <input class="form-control" name="jobtitle1" type="text" required>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="videoUrl1">Job Title*</label>
-                                                                <input class="form-control" type="text" required>
+                                                                <label for="videoUrl1">Company Name :</label>
+                                                                <input class="form-control" name="videoUrl1" type="text" required>
                                                             </div>
                                                         </div>
-
-                                                        @*<div class="col-md-12">
-                <div class="form-group">
-                    <label for="shortDescription1">Job Description :</label>
-                    <textarea name="shortDescription" id="shortDescription1" rows="6" class="form-control"></textarea>
-                </div>
-            </div>*@
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label for="firstName1">Department*</label>
-                                                                <input class="form-control" type="text" required>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="lastName1">Branch*</label>
-                                                                <input class="form-control" type="text" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="firstName1">Employee Email*</label>
-                                                                <input class="form-control" type="text" required>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="lastName1">Join Date*</label>
-                                                                <input class="form-control" type="date" required>
+                                                                <label for="shortDescription1">Job Description :</label>
+                                                                <textarea name="shortDescription" id="shortDescription1" rows="6" class="form-control"></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </form>
                                             </div>
                                             <div class="step-tab-panel" id="tab3">
-                                                @*<h3>Tab3</h3>*@
+                                                <h3>Tab3</h3>
                                                 <form name="frmLogin" id="frmLogin">
                                                     <div class="row m-t-2">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="int1">Bank Name*</label>
+                                                                <label for="int1">Interview For :</label>
                                                                 <input class="form-control" name="int1" type="text" required>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="intType1">Account Name*</label>
-                                                                <input class="form-control" name="int1" type="text" required>
+                                                                <label for="intType1">Interview Type :</label>
+                                                                <select class="custom-select form-control" data-placeholder="Type to search cities" name="intType1" required>
+                                                                    <option value="Banquet">Normal</option>
+                                                                    <option value="Fund Raiser">Difficult</option>
+                                                                    <option value="Dinner Party">Hard</option>
+                                                                </select>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="Location1">Account Type*</label>
+                                                                <label for="Location1">Location :</label>
                                                                 <select class="custom-select form-control" id="Location1" name="location">
-                                                                    <option value="">Select Account Type</option>
-                                                                    <option value="India">Savings</option>
-                                                                    <option value="India">Account</option>
+                                                                    <option value="">Select City</option>
+                                                                    <option value="India">India</option>
+                                                                    <option value="USA">USA</option>
+                                                                    <option value="Dubai">Dubai</option>
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="jobTitle2">Bank Sort Code*</label>
-                                                                <input class="form-control" type="text" required>
+                                                                <label for="jobTitle2">Interview Date :</label>
+                                                                <input class="form-control" name="jobTitle2" type="date" required>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Requirements :</label>
@@ -266,38 +204,31 @@
                                                 </form>
                                             </div>
                                             <div class="step-tab-panel" id="tab4">
-                                                @*<h3>Tab4</h3>*@
+                                                <h3>Tab4</h3>
                                                 <form name="frmMobile" id="frmMobile">
                                                     <div class="row m-t-2">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="behName1">FullName*</label>
+                                                                <label for="behName1">Behaviour :</label>
                                                                 <input class="form-control" name="behName1" type="text" required>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="participants1">Phone*</label>
+                                                                <label for="participants1">Confidance</label>
                                                                 <input class="form-control" name="participants1" type="text" required>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="participants1">Relationship*</label>
+                                                                <label for="participants1">Result</label>
                                                                 <select class="custom-select form-control" id="participants1" name="location">
-                                                                    <option value="">Select the Relationship</option>
-                                                                    <option value="">Brother</option>
-                                                                    <option value="">Sister</option>
-                                                                    <option value="">Father</option>
-                                                                    <option value="">Mother</option>
-                                                                    <option value="">Relative</option>
-                                                                    <option value="">Others</option>
+                                                                    <option value="">Select Result</option>
+                                                                    <option value="Selected">Selected</option>
+                                                                    <option value="Rejected">Rejected</option>
+                                                                    <option value="Call Second-time">Call Second-time</option>
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="participants1">Address*</label>
-                                                                <input class="form-control" name="participants1" type="text" required>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="decisions1">Comments*</label>
+                                                                <label for="decisions1">Comments</label>
                                                                 <textarea name="decisions" id="decisions1" rows="4" class="form-control"></textarea>
                                                             </div>
                                                             <div class="form-group">
@@ -337,6 +268,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -365,11 +297,9 @@
 <!-- End Wrapper -->
 <!-- ============================================================== -->
 
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
-
 <!-- ./wrapper -->
 <!-- jQuery 3 -->
 
@@ -479,111 +409,147 @@
         }
     });</script>
 
-<script>
-    $(document).ready(function () {
-        //-------------------------------SELECT CASCADING-------------------------//
-        var selectedCountry = selectedRegion = selectedCity = countryCode = "";
-        // This is a demo API key for testing purposes. You should rather request your API key (free) from http://battuta.medunes.net/
-        var BATTUTA_KEY = "00000000000000000000000000000000";
-        // Populate country select box from battuta API
-        url =
-            "https://battuta.medunes.net/api/country/all/?key=" +
-            BATTUTA_KEY +
-            "&callback=?";
-        // EXTRACT JSON DATA.
-        $.getJSON(url, function (data) {
-            $.each(data, function (index, value) {
-                // APPEND OR INSERT DATA TO SELECT ELEMENT. Set the country code in the id section rather than in the value.
-                $("#country").append(
-                    '<option id="' + value.code + '" value="' + value.code + '">' + value.name + "</option>"
-                );
-            });
-        });
-        // Country selected --> update region list .
-        $("#country").change(function () {
-            selectedCountry = this.options[this.selectedIndex].text;
-            countryCode = $(this).children(":selected").attr("id");
-            url =
-                "https://battuta.medunes.net/api/region/" +
-                countryCode +
-                "/all/?key=" +
-                BATTUTA_KEY +
-                "&callback=?";
-            $.getJSON(url, function (data) {
-                $("#region option").remove();
-                $.each(data, function (index, value) {
-                    // APPEND OR INSERT DATA TO SELECT ELEMENT.
-                    $("#region").append(
-                        '<option value="' + value.region + '">' + value.region + "</option>"
-                    );
-                });
-            });
-        });
-        // Region selected --> updated city list
-        $("#region").on("change", function () {
-            selectedRegion = this.options[this.selectedIndex].text;
-            // Populate country select box from battuta API
-            region = $("#region").val();
-            url =
-                "https://battuta.medunes.net/api/city/" +
-                countryCode +
-                "/search/?region=" +
-                region +
-                "&key=" +
-                BATTUTA_KEY +
-                "&callback=?";
-            $.getJSON(url, function (data) {
-                $("#city option").remove();
-                $.each(data, function (index, value) {
-                    // APPEND OR INSERT DATA TO SELECT ELEMENT.
-                    $("#city").append(
-                        '<option value="' + value.city + '">' + value.city + "</option>"
-                    );
-                });
-            });
-        });
-        // city selected --> update location string
-        $("#city").on("change", function () {
-            selectedCity = this.options[this.selectedIndex].text;
-            $("#location").html(
-                "Locatation: Country: " +
-                selectedCountry +
-                ", Region: " +
-                selectedRegion +
-                ", City: " +
-                selectedCity
-            );
-        });
 
-    });
-    // process form
-    function processForm() {
-        var username = password = country = region = city = '';
-        username = $('#username').val();
-        password = $('#password').val();
-        country = $('#country').val();
-        region = $('#region').val();
-        city = $('#city').val();
-        if (username != '' && password != '' && country != '' && region != '' && city != '') {
-            $("#location").html(
-                "Username: " + username +
-                " /Password: " + password +
-                " /Locatation: Country: " +
-                country +
-                ", Region: " +
-                region +
-                ", City: " +
-                city
-            );
-        } else {
-            $("#location").html('Complete Form 1st');
-            return false;
-        }
-    }
-</script>
+@*<h2>Create</h2>
 
+    <h4>Employee</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="ApplicationUserId" class="control-label"></label>
+                    <input asp-for="ApplicationUserId" class="form-control" />
+                    <span asp-validation-for="ApplicationUserId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label"></label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label"></label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MiddleName" class="control-label"></label>
+                    <input asp-for="MiddleName" class="form-control" />
+                    <span asp-validation-for="MiddleName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmployeeId" class="control-label"></label>
+                    <input asp-for="EmployeeId" class="form-control" />
+                    <span asp-validation-for="EmployeeId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Photograph" class="control-label"></label>
+                    <input asp-for="Photograph" class="form-control" />
+                    <span asp-validation-for="Photograph" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Status" class="control-label"></label>
+                    <input asp-for="Status" class="form-control" />
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DOB" class="control-label"></label>
+                    <input asp-for="DOB" class="form-control" />
+                    <span asp-validation-for="DOB" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Nationality" class="control-label"></label>
+                    <input asp-for="Nationality" class="form-control" />
+                    <span asp-validation-for="Nationality" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Gender" class="control-label"></label>
+                    <input asp-for="Gender" class="form-control" />
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MaritalStatus" class="control-label"></label>
+                    <input asp-for="MaritalStatus" class="form-control" />
+                    <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label"></label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MobileNo" class="control-label"></label>
+                    <input asp-for="MobileNo" class="form-control" />
+                    <span asp-validation-for="MobileNo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="WorkTelephone" class="control-label"></label>
+                    <input asp-for="WorkTelephone" class="form-control" />
+                    <span asp-validation-for="WorkTelephone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AccountNo" class="control-label"></label>
+                    <input asp-for="AccountNo" class="form-control" />
+                    <span asp-validation-for="AccountNo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AccountType" class="control-label"></label>
+                    <input asp-for="AccountType" class="form-control" />
+                    <span asp-validation-for="AccountType" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SortCode" class="control-label"></label>
+                    <input asp-for="SortCode" class="form-control" />
+                    <span asp-validation-for="SortCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="contractType" class="control-label"></label>
+                    <input asp-for="contractType" class="form-control" />
+                    <span asp-validation-for="contractType" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="JoinDate" class="control-label"></label>
+                    <input asp-for="JoinDate" class="form-control" />
+                    <span asp-validation-for="JoinDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DateCreated" class="control-label"></label>
+                    <input asp-for="DateCreated" class="form-control" />
+                    <span asp-validation-for="DateCreated" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DateUpdated" class="control-label"></label>
+                    <input asp-for="DateUpdated" class="form-control" />
+                    <span asp-validation-for="DateUpdated" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DateModified" class="control-label"></label>
+                    <input asp-for="DateModified" class="form-control" />
+                    <span asp-validation-for="DateModified" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input asp-for="IsDeleted" /> @Html.DisplayNameFor(model => model.IsDeleted)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
 
-
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>*@
 
 @*<form class="form-horizontal p-t-20" asp-action="create" method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -1056,156 +1022,3 @@
             </div>
         </div>
     </form>*@
-
-
-
-
-
-
-
-
-
-
-
-@*<h2>Create</h2>
-
-    <h4>Employee</h4>
-    <hr />
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="ApplicationUserId" class="control-label"></label>
-                    <input asp-for="ApplicationUserId" class="form-control" />
-                    <span asp-validation-for="ApplicationUserId" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="FirstName" class="control-label"></label>
-                    <input asp-for="FirstName" class="form-control" />
-                    <span asp-validation-for="FirstName" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="LastName" class="control-label"></label>
-                    <input asp-for="LastName" class="form-control" />
-                    <span asp-validation-for="LastName" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="MiddleName" class="control-label"></label>
-                    <input asp-for="MiddleName" class="form-control" />
-                    <span asp-validation-for="MiddleName" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="EmployeeId" class="control-label"></label>
-                    <input asp-for="EmployeeId" class="form-control" />
-                    <span asp-validation-for="EmployeeId" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Photograph" class="control-label"></label>
-                    <input asp-for="Photograph" class="form-control" />
-                    <span asp-validation-for="Photograph" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Status" class="control-label"></label>
-                    <input asp-for="Status" class="form-control" />
-                    <span asp-validation-for="Status" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="DOB" class="control-label"></label>
-                    <input asp-for="DOB" class="form-control" />
-                    <span asp-validation-for="DOB" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Nationality" class="control-label"></label>
-                    <input asp-for="Nationality" class="form-control" />
-                    <span asp-validation-for="Nationality" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Gender" class="control-label"></label>
-                    <input asp-for="Gender" class="form-control" />
-                    <span asp-validation-for="Gender" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="MaritalStatus" class="control-label"></label>
-                    <input asp-for="MaritalStatus" class="form-control" />
-                    <span asp-validation-for="MaritalStatus" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Address" class="control-label"></label>
-                    <input asp-for="Address" class="form-control" />
-                    <span asp-validation-for="Address" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="MobileNo" class="control-label"></label>
-                    <input asp-for="MobileNo" class="form-control" />
-                    <span asp-validation-for="MobileNo" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="WorkTelephone" class="control-label"></label>
-                    <input asp-for="WorkTelephone" class="form-control" />
-                    <span asp-validation-for="WorkTelephone" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Email" class="control-label"></label>
-                    <input asp-for="Email" class="form-control" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="AccountNo" class="control-label"></label>
-                    <input asp-for="AccountNo" class="form-control" />
-                    <span asp-validation-for="AccountNo" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="AccountType" class="control-label"></label>
-                    <input asp-for="AccountType" class="form-control" />
-                    <span asp-validation-for="AccountType" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="SortCode" class="control-label"></label>
-                    <input asp-for="SortCode" class="form-control" />
-                    <span asp-validation-for="SortCode" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="contractType" class="control-label"></label>
-                    <input asp-for="contractType" class="form-control" />
-                    <span asp-validation-for="contractType" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="JoinDate" class="control-label"></label>
-                    <input asp-for="JoinDate" class="form-control" />
-                    <span asp-validation-for="JoinDate" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="DateCreated" class="control-label"></label>
-                    <input asp-for="DateCreated" class="form-control" />
-                    <span asp-validation-for="DateCreated" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="DateUpdated" class="control-label"></label>
-                    <input asp-for="DateUpdated" class="form-control" />
-                    <span asp-validation-for="DateUpdated" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="DateModified" class="control-label"></label>
-                    <input asp-for="DateModified" class="form-control" />
-                    <span asp-validation-for="DateModified" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <div class="checkbox">
-                        <label>
-                            <input asp-for="IsDeleted" /> @Html.DisplayNameFor(model => model.IsDeleted)
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>*@
-
-
