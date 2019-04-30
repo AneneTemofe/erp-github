@@ -41,10 +41,10 @@
       <ul id="sidebarnav">
         @*<li class="nav-small-cap">--- ADMIN</li>*@
 
-        <li>
+        @*<li>
           <a class="waves-effect waves-dark" asp-action="Index" asp-controller="Home" aria-expanded="false"><i class="ti-home"></i><span class="hide-menu">Home</span></a>
 
-        </li>
+        </li>*@
         <li>
           <a class="waves-effect waves-dark" asp-action="Dashboard" asp-controller="Admin" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard</span></a>
 
@@ -123,7 +123,7 @@
 
               @*<a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>*@
               <a class="waves-effect waves-dark" aria-expanded="false">
-                <i class="far fa-circle text-success"></i>
+                <i class="far fa-lock text-success"></i>
                 <button type="submit" class="btn btn-link navbar-btn navbar-link">Log out</button>
 
                 @*<span type="submit" class="hide-menu">Log Out</span>*@
